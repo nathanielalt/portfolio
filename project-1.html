@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aeroacoustics Parametric Research Project — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap" style="padding:56px 28px 40px;">
+    <span class="index-tag">Project 01 · UTIAS Research</span>
+    <h1>Aeroacoustics Parametric Research Project</h1>
+  </div>
+</header>
+
+<main>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Overview</p>
+      <p class="lead">Completed as part of my research internship at the University of Toronto Institute for Aerospace Studies (UTIAS). Due to their convenience and versatility, many aeroacoustics labs have replaced wall-mounted microphones in favour of remote microphone probes (RMPs) connected to the surface through a tube. Despite their improvements, RMPs require calibration through a signal transfer function, as the pressure waves are distorted after travelling through the tube. My project aims to determine the effect of various parameters on the resulting transfer function. Some of these parameters included: tube length, tube diameter, ambient temperature and even humidity. As part of this project, numerous side projects were made including a sensor box, a bayesian-inference MCMC algorithm to clean data, and various experiment apparatuses.</p>
+
+      <div class="draft-note">
+        <span class="draft-label">Draft note — from original document</span>
+        <p>Include: Summary/Overview · Tools Used and Metrics · Pictures with Captions · Challenges + Solutions</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Tools Used</p>
+      <ul class="tag-list">
+        <li class="tag">Fusion 360</li>
+        <li class="tag">Arduino IDE</li>
+        <li class="tag">Soldering, Circuit Design</li>
+        <li class="tag">SLA and FDM Printing / Slicing</li>
+        <li class="tag">Python &amp; MATLAB (signal processing, algorithms)</li>
+        <li class="tag">DAQ &amp; data collection</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Pictures</p>
+      <div class="gallery">
+
+        <figure class="shot">
+          <div class="img-placeholder">
+            <div class="ph-icon"></div>
+            <span class="ph-text">Add photo here</span>
+            <span class="ph-file">IMG_9682.jpeg</span>
+          </div>
+          <figcaption>
+            <span class="cap-file">IMG_9682.jpeg</span>
+            Completed sensor circuit box, with a working LCD display. Used to read the ambient temperature, humidity, and pressure in the room. It utilizes two sensors, one using I2C protocol and the other using SPI protocol. Communicates through a Adafruit ItsyBitsy microcontroller programmed in Arduino IDE.
+          </figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="img-placeholder">
+            <div class="ph-icon"></div>
+            <span class="ph-text">Add photo here</span>
+            <span class="ph-file">IMG_9682.jpeg</span>
+          </div>
+          <figcaption>
+            <span class="cap-file">IMG_9682.jpeg</span>
+            Internal circuit board. All solid core wires were soldered onto a Sparkfun Electronics protoboard.
+          </figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="img-placeholder">
+            <div class="ph-icon"></div>
+            <span class="ph-text">Add photo here</span>
+            <span class="ph-file">IMG_9842.HEIC</span>
+          </div>
+          <figcaption>
+            <span class="cap-file">IMG_9842.HEIC</span>
+            Completed testing apparatus. All casings and supports were 3D printed and designed in Fusion 360.
+          </figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="img-placeholder">
+            <div class="ph-icon"></div>
+            <span class="ph-text">Add photo here</span>
+            <span class="ph-file">IMG_9847.jpeg</span>
+          </div>
+          <figcaption>
+            <span class="cap-file">IMG_9847.jpeg</span>
+            SLA printing and curing using water-washable resin.
+          </figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="frame"><img src="images/rmp-housing-cad.png" alt="CAD cross-section of the RMP housing"></div>
+          <figcaption>CAD of RMP Housing.</figcaption>
+        </figure>
+
+      </div>
+
+      <div class="draft-note" style="margin-top:24px;">
+        <span class="draft-label">Draft note — from original document</span>
+        <p>More to come…</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Results</p>
+      <ul class="std-list">
+        <li>Effectively outlined the relationship between various parameters and RMP transfer functions</li>
+        <li>Compiled all data and findings into a slideshow and report
+          <ul><li><span class="link-stub">🔗 Found Here — link coming soon</span></li></ul>
+        </li>
+        <li>Delivered valuable data and tools to the team at FCET to optimize future RMP calibrations
+          <ul><li>Sensor Box, paraDram convergence algorithm</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Challenges + Solutions</p>
+      <ul class="std-list">
+        <li>Sensor Calibration
+          <ul>
+            <li>Ensuring that the sensor housed inside the container accurately reflected the ambient conditions of the room rather than its internal microbiome</li>
+            <li>Solutions:
+              <ul>
+                <li>Graphed plots of humidity and temperature readings over time to determine the time taken to reach equilibrium</li>
+                <li>Compromised by programming in a timer to prevent thermal drift</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Experimental Design
+          <ul><li>Isolating variables to ensure accurate data</li></ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="proj-pagination">
+        <a class="page-link" href="projects.html">← All Projects</a>
+        <a class="page-link next" href="project-2.html">Next: Cansat Autonomous Glider →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>Nathan Xia — Engineering Portfolio</span>
+  <span>Built with HTML / CSS</span>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

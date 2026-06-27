@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lattice-Boltzmann Method CFD — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap" style="padding:56px 28px 40px;">
+    <span class="index-tag">Project 04 · Personal Project</span>
+    <h1>Lattice-Boltzmann Method CFD <span class="badge-ongoing">Ongoing</span></h1>
+  </div>
+</header>
+
+<main>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Overview</p>
+      <p class="lead">This project is still ongoing. Many current day CFD software such as AutodeskCFD or Fluent require significant effort to simply run a simulation. Much of the headache is attributed to downloading the software itself and setting up the environment. However, for the majority of beginners, hobbyists and even design teams, much of the advanced settings are unused and only serve to clutter the UI. This project serves to solve this issue by making a simplified cloud/web-based CFD, built on the Lattice-Boltzmann Method (LBM).</p>
+
+      <div class="draft-note">
+        <span class="draft-label">Draft note — from original document</span>
+        <p>Format nicely as a pdf or as a website later (claude)</p>
+      </div>
+
+      <div class="img-placeholder" style="border-radius:6px;border:1px dashed var(--line);margin-top:24px;">
+        <div class="ph-icon"></div>
+        <span class="ph-text">Add pictures here once available</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="proj-pagination">
+        <a class="page-link" href="project-3.html">← Flow Control Research Project</a>
+        <a class="page-link next" href="projects.html">Back to All Projects →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>Nathan Xia — Engineering Portfolio</span>
+  <span>Built with HTML / CSS</span>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

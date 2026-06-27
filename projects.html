@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap" style="padding:64px 28px 48px;">
+    <p class="eyebrow">Projects</p>
+    <h1>Four builds, four years of figuring things out.</h1>
+    <p class="lead">From a cardboard wind tunnel to a UTIAS research internship — each project page below has the full overview, tools, pictures, challenges, and results.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="proj-grid">
+
+        <a class="proj-card" href="project-1.html">
+          <div class="thumb"><img src="images/rmp-housing-cad.png" alt="RMP housing CAD render"></div>
+          <div class="body">
+            <span class="index">01 · UTIAS Research</span>
+            <h3>Aeroacoustics Parametric Research Project</h3>
+            <p>Completed as part of a research internship at UTIAS, determining the effect of tube length, diameter, temperature, and humidity on remote microphone probe (RMP) transfer functions.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="project-2.html">
+          <div class="thumb"><img src="images/glider-body-cad.png" alt="Glider body CAD render"></div>
+          <div class="body">
+            <span class="index">02 · RSX Aerial Design</span>
+            <h3>Cansat Autonomous Glider</h3>
+            <p>An autonomous glider for the AAS CANSAT competition, launched 700m into the air to drop an egg payload within a designated zone. Focus: mechanical design of the body, nosecone, and tail.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="project-3.html">
+          <div class="thumb"><img src="images/daq-protractor.jpg" alt="Wind tunnel data acquisition rig"></div>
+          <div class="body">
+            <span class="index">03 · Science Fair</span>
+            <h3>Flow Control Research Project</h3>
+            <p>Investigating vortex generator placement and gap spacing on stall AOA mitigation for a NACA 2412 airfoil, tested in a homemade flow-visualization wind tunnel.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="project-4.html">
+          <div class="thumb"><span class="ph-mark">Visual coming soon</span></div>
+          <div class="body">
+            <span class="index">04 · Personal Project</span>
+            <h3>Lattice-Boltzmann Method CFD</h3>
+            <p>A simplified, cloud/web-based CFD tool built on the Lattice-Boltzmann Method, aimed at beginners, hobbyists, and design teams who don't need a cluttered, heavyweight solver UI.</p>
+            <span class="status">Ongoing</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>Nathan Xia — Engineering Portfolio</span>
+  <span>Built with HTML / CSS</span>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

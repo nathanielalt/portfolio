@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nathan Xia — Engineering Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--
+  ===================================================================
+  HERO — DUAL VIDEO BACKGROUND
+  Two side-by-side <video> panes are wired up below and ready to play
+  automatically (autoplay, muted, loop, playsinline — required for
+  autoplay in most browsers). Drop your two files into /videos/ using
+  the exact filenames referenced in the <source> tags, or change the
+  src paths to point wherever you keep them.
+    - Left pane  -> videos/reel-1.mp4
+    - Right pane -> videos/reel-2.mp4
+  Until real files exist there, this just shows the dark gradient
+  background, so the page still looks intentional with no videos yet.
+  ===================================================================
+-->
+<header class="hero">
+  <div class="hero-pane">
+    <span class="pane-tag">FEED <span>01</span></span>
+    <!-- TODO: add your first background video file at videos/reel-1.mp4 -->
+    <video autoplay muted loop playsinline>
+      <source src="videos/reel-1.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-pane">
+    <span class="pane-tag">FEED <span>02</span></span>
+    <!-- TODO: add your second background video file at videos/reel-2.mp4 -->
+    <video autoplay muted loop playsinline>
+      <source src="videos/reel-2.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-scanline" aria-hidden="true"></div>
+
+  <div class="hero-overlay">
+    <p class="eyebrow">Engineering Science · University of Toronto</p>
+    <h1>Nathan&nbsp;Xia</h1>
+    <p>Aerospace-focused engineer working across aeroacoustics, flow control, and computational &amp; experimental fluid dynamics.</p>
+    <div class="hero-ticker">Aeroacoustics — Flow Control — CFD — Experimental Design</div>
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">About Me</p>
+        <h2>Hello!</h2>
+        <p class="lead">My name is Nathan Xia and I am an incoming second year Engineering Science student at the University of Toronto, intending to specialize in Aerospace Engineering. I have a lifelong passion for anything aerospace, and am especially interested in aeroacoustics, flow control, and both experimental and computational fluid dynamics. In the future, I hope to continue my studies into graduate school and R&amp;D. I have showcased a few of my notable projects to help supplement my resume and to convince you of my passion!</p>
+
+        <p>Throughout these projects, I have gained proficiency in a variety of tools and languages. The most notable ones are listed below:</p>
+
+        <div class="draft-note">
+          <span class="draft-label">Draft note — from original document</span>
+          <p>Blah blah blah</p>
+        </div>
+
+        <div class="draft-note">
+          <span class="draft-label">Draft note — from original document</span>
+          <p>Resume and Contact info will probably be on a separate page. → see the <a href="contact.html">Contact</a> page.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Quick Facts</h3>
+        <ul class="tag-list">
+          <li class="tag">Aeroacoustics</li>
+          <li class="tag">Flow Control</li>
+          <li class="tag">CFD</li>
+          <li class="tag">Fusion 360</li>
+          <li class="tag">Arduino IDE</li>
+          <li class="tag">Python / MATLAB</li>
+          <li class="tag">OpenVSP</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="wrap">
+      <p class="section-label">Featured Work</p>
+      <div class="proj-grid">
+
+        <a class="proj-card" href="project-1.html">
+          <div class="thumb"><img src="images/rmp-housing-cad.png" alt="RMP housing CAD render"></div>
+          <div class="body">
+            <span class="index">01 · UTIAS Research</span>
+            <h3>Aeroacoustics Parametric Research Project</h3>
+            <p>Calibrating remote microphone probe transfer functions against tube length, diameter, temperature, and humidity.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="project-2.html">
+          <div class="thumb"><img src="images/glider-body-cad.png" alt="Glider body CAD render"></div>
+          <div class="body">
+            <span class="index">02 · RSX Aerial Design</span>
+            <h3>Cansat Autonomous Glider</h3>
+            <p>Mechanical design of a rocket-deployed autonomous glider body, nosecone, and tail for the AAS CANSAT competition.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="project-3.html">
+          <div class="thumb"><img src="images/daq-protractor.jpg" alt="Wind tunnel data acquisition rig"></div>
+          <div class="body">
+            <span class="index">03 · Science Fair</span>
+            <h3>Flow Control Research Project</h3>
+            <p>Vortex generator placement and gap spacing for stall AOA mitigation, tested in a homemade flow-visualization wind tunnel.</p>
+          </div>
+        </a>
+
+        <a class="proj-card" href="project-4.html">
+          <div class="thumb"><span class="ph-mark">Visual coming soon</span></div>
+          <div class="body">
+            <span class="index">04 · Personal Project</span>
+            <h3>Lattice-Boltzmann Method CFD</h3>
+            <p>A simplified, cloud/web-based CFD tool built on LBM for beginners, hobbyists, and design teams.</p>
+            <span class="status">Ongoing</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>Nathan Xia — Engineering Portfolio</span>
+  <span>Built with HTML / CSS</span>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

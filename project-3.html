@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow Control Research Project — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap" style="padding:56px 28px 40px;">
+    <span class="index-tag">Project 03 · Science Fair</span>
+    <h1>Flow Control Research Project</h1>
+  </div>
+</header>
+
+<main>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Overview</p>
+      <p class="lead">The goal of this project was to investigate the effect of vortex generator placement and long gap spacing on stall AOA mitigation. A NACA 2412 airfoil profile was chosen to target potential efficiency improvements in beginner aircraft such as on the Cessna 172. All data was gathered experimentally in a homemade flow visualization wind tunnel, at an airspeed of roughly 0.84m/s. This passion project turned science fair project was my first experience with research and flow control.</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Tools Used</p>
+      <ul class="tag-list">
+        <li class="tag">CAD (TinkerCAD)</li>
+        <li class="tag">Desmos — Airfoil Design</li>
+        <li class="tag">Experimental design, analysis &amp; communication</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Pictures</p>
+      <div class="gallery">
+
+        <figure class="shot">
+          <div class="img-placeholder">
+            <div class="ph-icon"></div>
+            <span class="ph-text">Add photo here</span>
+            <span class="ph-file">IMG_5727.jpeg</span>
+          </div>
+          <figcaption>
+            <span class="cap-file">IMG_5727.jpeg</span>
+            Wind Tunnel Pic. Flow Separation visualized on a NACA2412 airfoil in the wind tunnel. A recirculation region can be seen. Incense smoke was used to visualize the airflow over the wing. Airfoil was modeled in Desmos before converting into a .STL file in TinkerCAD. This was my first experience with CAD.
+          </figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="video-placeholder">
+            <div class="play-ring"></div>
+            <span class="ph-text">Add video here — Wind tunnel Movie</span>
+          </div>
+          <figcaption>
+            <span class="cap-file">Wind tunnel Movie</span>
+            <div class="draft-note" style="margin:8px 0 0;">
+              <span class="draft-label">Draft note — from original document</span>
+              <p>Get rest from paper as necessary</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="frame"><img src="images/wind-tunnel-fan.jpg" alt="3D modeled vacuum fan inside the wind tunnel"></div>
+          <figcaption>3D Modeled Vacuum fan to generate enough suction force inside the wind tunnel. This design was chosen after repeated failures with standard computer cooling fans.</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="frame"><img src="images/daq-protractor.jpg" alt="Data acquisition rig with protractor"></div>
+          <figcaption>Data acquisition infrastructure. A protractor is attached to the back of the airfoil plate so that the AOA can be measured. All components were taken from parts around the house.</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Results</p>
+      <ul class="std-list">
+        <li>Placed 2nd Overall for seniors at the Calgary Youth Science Fair (CYSF)
+          <ul><li>$500 Cash Prize</li></ul>
+        </li>
+        <li>1 of 15 teams out of ~600 projects displayed selected to advance to the Canada-Wide Science Fair (CWSF)</li>
+        <li>Awarded a bronze medal at the CWSF, out of a total of ~350 projects</li>
+        <li>Effectively demonstrated the impact of passive flow control techniques</li>
+        <li>Effectively visualized the flow around an airfoil at different AOA, given limited resources and knowledge</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Challenges + Solutions</p>
+      <ul class="std-list">
+        <li>Figuring out how and where to begin (always the hardest part!)</li>
+        <li>Designing and Manufacturing a home-made wind tunnel
+          <ul>
+            <li>Visualizing airflow within wind tunnel</li>
+            <li>Generating enough suction within the wind tunnel</li>
+            <li>Designing an effective data acquisition method to measure stall AOA</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="proj-pagination">
+        <a class="page-link" href="project-2.html">← Cansat Autonomous Glider</a>
+        <a class="page-link next" href="project-4.html">Next: Lattice-Boltzmann Method CFD →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>Nathan Xia — Engineering Portfolio</span>
+  <span>Built with HTML / CSS</span>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap" style="padding:64px 28px 48px;">
+    <p class="eyebrow">Contact</p>
+    <h1>Resume &amp; Contact Info</h1>
+    <div class="draft-note" style="max-width:62ch;">
+      <span class="draft-label">Draft note — from original document</span>
+      <p>Resume and Contact info will probably be on a separate page.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="tight">
+    <div class="wrap contact-grid">
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Resume</h3>
+        <p>Drop your résumé file into the project folder and link it below.</p>
+        <!-- TODO: replace href with the real path to your resume, e.g. files/Nathan_Xia_Resume.pdf -->
+        <a class="btn" href="files/Nathan_Xia_Resume.pdf">Download Resume (PDF)</a>
+        <div class="draft-note" style="margin-top:18px;">
+          <span class="draft-label">Setup note</span>
+          <p>Add your resume PDF at files/Nathan_Xia_Resume.pdf — or edit the link above.</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3 style="margin-top:0;">Get in Touch</h3>
+        <div class="contact-field">
+          <span class="k">Email</span>
+          <span class="v">[ your email here ]</span>
+        </div>
+        <div class="contact-field">
+          <span class="k">LinkedIn</span>
+          <span class="v">[ your LinkedIn URL here ]</span>
+        </div>
+        <div class="contact-field">
+          <span class="k">GitHub</span>
+          <span class="v">[ your GitHub URL here ]</span>
+        </div>
+        <div class="contact-field" style="border-bottom:none;">
+          <span class="k">Location</span>
+          <span class="v">[ your city here ]</span>
+        </div>
+        <div class="draft-note" style="margin-top:18px;">
+          <span class="draft-label">Setup note</span>
+          <p>Replace the bracketed placeholders above with your real contact details.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>Nathan Xia — Engineering Portfolio</span>
+  <span>Built with HTML / CSS</span>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
