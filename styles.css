@@ -248,7 +248,8 @@ p.lead{color:var(--text);font-size:1.1rem;}
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
+   justify-content: flex-start;
+  padding-top: 80px;
   text-align:center;
   background:transparent;
   padding:0 24px;
