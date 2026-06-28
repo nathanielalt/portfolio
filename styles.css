@@ -293,14 +293,14 @@ p.lead{color:var(--text);font-size:1.1rem;}
 /* ---------- about / cards ---------- */
 .about-grid{
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
 }
 
 .about-image img{
   width: 100%;
-  height: auto;
+  height: 420px;
   display: block;
   border-radius: 8px;
   object-fit: cover;
