@@ -313,7 +313,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 .tag{
   font-family:var(--font-mono);
-  font-size:.74rem;
+  font-size:.85rem;
   letter-spacing:.02em;
   color:var(--text-dim);
   border:1px solid var(--line);
