@@ -367,7 +367,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
   overflow:hidden;
   transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 
-  min-height:420px; /* makes cards taller */
+  min-height:500px; /* makes cards taller */
 }
 
 .proj-card:hover{
@@ -379,7 +379,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 
 /* ---------- image / thumbnail ---------- */
 .proj-card .thumb{
-  height:240px; /* taller image area */
+  height:350px; /* taller image area */
   background:var(--bg-alt);
   display:flex;
   align-items:center;
