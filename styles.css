@@ -696,7 +696,7 @@ footer.site-footer{
   display: flex;
   justify-content: center;
   align-items: center;
-   gap:80px;
+   gap:300px;
 
   /* text styling (same vibe as before) */
   color: rgba(255,255,255,0.55);
