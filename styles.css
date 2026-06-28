@@ -248,8 +248,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
   display:flex;
   flex-direction:column;
   align-items:center;
-   justify-content: flex-start;
-  padding-top: 300px;
+   justify-content:center;
   text-align:center;
   background:transparent;
   padding:0 24px;
@@ -313,7 +312,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 .tag{
   font-family:var(--font-mono);
-  font-size:1.2rem;
+  font-size:1.0rem;
   letter-spacing:.02em;
   color:var(--text-dim);
   border:1px solid var(--line);
