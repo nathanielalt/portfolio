@@ -379,7 +379,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 
 /* ---------- image / thumbnail ---------- */
 .proj-card .thumb{
-  height:400px; /* taller image area */
+  height:350px; /* taller image area */
   background:var(--bg-alt);
   display:flex;
   align-items:center;
@@ -415,14 +415,17 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 
 .proj-card h3{
-  margin:6px 0 8px;
-  color:var(--text);
+  font-size: 1.05rem;
+  margin: 6px 0 6px;
 }
 
 .proj-card p{
-  font-size:.92rem;
-  margin:0;
+  font-size: .85rem;
+  line-height: 1.35;
+  margin: 0;
 }
+
+
 
 /* ---------- status tag ---------- */
 .proj-card .status{
@@ -706,7 +709,7 @@ footer.site-footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 80px;
+  gap: 300px;
 
   /* text styling (same vibe as before) */
   color: rgba(255,255,255,0.55);
