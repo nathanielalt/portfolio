@@ -293,7 +293,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 /* ---------- about / cards ---------- */
 .about-grid{
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-columns: 1.6fr 1fr;
   gap: 48px;
   align-items: start;
 }
