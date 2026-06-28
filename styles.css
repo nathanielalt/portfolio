@@ -404,7 +404,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 
 /* ---------- text body ---------- */
 .proj-card .body{
-  padding:22px 22px 26px;
+  padding:14px 16px 16px;
 }
 
 .proj-card .index{
@@ -415,14 +415,13 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 
 .proj-card h3{
-  font-size: 1.05rem;
-  margin: 6px 0 6px;
+  margin:6px 0 8px;
+  color:var(--text);
 }
 
 .proj-card p{
-  font-size: .85rem;
-  line-height: 1.35;
-  margin: 0;
+  font-size:.92rem;
+  margin:0;
 }
 
 
@@ -707,9 +706,9 @@ footer.site-footer{
   padding: 0 28px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 300px;
+   gap:80px;
 
   /* text styling (same vibe as before) */
   color: rgba(255,255,255,0.55);
