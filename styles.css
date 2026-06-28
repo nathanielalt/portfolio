@@ -186,8 +186,8 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 .hero{
   position:relative;
-  height:min(78vh,800px);
-  min-height:420px;
+  height:min(78vh,640px);
+  min-height:600px;
   overflow:hidden;
   display:flex;
    flex-direction:column;
