@@ -186,16 +186,18 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 .hero{
   position:relative;
-  height:min(78vh,640px);
+  height:min(78vh,800px);
   min-height:420px;
   overflow:hidden;
   display:flex;
+   flex-direction:column;
   background:var(--navy);
   border-radius:10px;
 }
 .hero-pane{
   position:relative;
   flex:1;
+   width: 100%;
   overflow:hidden;
   background:
     radial-gradient(circle at 30% 20%, var(--navy-soft) 0%, var(--navy) 70%);
