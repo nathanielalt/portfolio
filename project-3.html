@@ -6,7 +6,7 @@
 <title>Flow Control Research Project — Nathan Xia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -58,11 +58,13 @@
       <p class="section-label">Pictures</p>
       <div class="gallery">
 
-        <figure class="shot">
-          <div class="img-placeholder">
-            <div class="ph-icon"></div>
-            <span class="ph-text">Add photo here</span>
-            <span class="ph-file">IMG_5727.jpeg</span>
+        <figure class="shot shot--large">
+          <div class="frame">
+            <div class="img-placeholder">
+              <div class="ph-icon"></div>
+              <span class="ph-text">Add photo here</span>
+              <span class="ph-file">IMG_5727.jpeg</span>
+            </div>
           </div>
           <figcaption>
             <span class="cap-file">IMG_5727.jpeg</span>
@@ -70,10 +72,12 @@
           </figcaption>
         </figure>
 
-        <figure class="shot">
-          <div class="video-placeholder">
-            <div class="play-ring"></div>
-            <span class="ph-text">Add video here — Wind tunnel Movie</span>
+        <figure class="shot shot--std">
+          <div class="frame">
+            <div class="video-placeholder">
+              <div class="play-ring"></div>
+              <span class="ph-text">Add video here — Wind tunnel Movie</span>
+            </div>
           </div>
           <figcaption>
             <span class="cap-file">Wind tunnel Movie</span>
@@ -84,12 +88,12 @@
           </figcaption>
         </figure>
 
-        <figure class="shot">
+        <figure class="shot shot--std">
           <div class="frame"><img src="images/wind-tunnel-fan.jpg" alt="3D modeled vacuum fan inside the wind tunnel"></div>
           <figcaption>3D Modeled Vacuum fan to generate enough suction force inside the wind tunnel. This design was chosen after repeated failures with standard computer cooling fans.</figcaption>
         </figure>
 
-        <figure class="shot">
+        <figure class="shot shot--large">
           <div class="frame"><img src="images/daq-protractor.jpg" alt="Data acquisition rig with protractor"></div>
           <figcaption>Data acquisition infrastructure. A protractor is attached to the back of the airfoil plate so that the AOA can be measured. All components were taken from parts around the house.</figcaption>
         </figure>
