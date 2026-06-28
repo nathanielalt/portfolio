@@ -343,31 +343,57 @@ p.lead{color:var(--text);font-size:1.1rem;}
 .draft-note p{color:#8a4112;margin:0;font-family:var(--font-mono);font-size:.82rem;max-width:none;}
 
 /* ---------- featured / project index cards ---------- */
+
+/* ---------- project grid ---------- */
 .proj-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
+  grid-template-columns:repeat(2, minmax(320px, 1fr));
+  gap:28px;
 }
-@media (max-width:720px){ .proj-grid{grid-template-columns:1fr;} }
 
+@media (max-width:720px){
+  .proj-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ---------- project card ---------- */
 .proj-card{
   position:relative;
   display:block;
   background:#fff;
   border:1px solid var(--line);
-  border-radius:6px;
+  border-radius:8px;
   overflow:hidden;
   transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+
+  min-height:420px; /* makes cards taller */
 }
-.proj-card:hover{border-color:var(--accent-dim);transform:translateY(-2px);text-decoration:none;box-shadow:0 10px 30px -16px rgba(12,37,69,0.35);}
+
+.proj-card:hover{
+  border-color:var(--accent-dim);
+  transform:translateY(-2px);
+  text-decoration:none;
+  box-shadow:0 10px 30px -16px rgba(12,37,69,0.35);
+}
+
+/* ---------- image / thumbnail ---------- */
 .proj-card .thumb{
-  height:170px;
+  height:240px; /* taller image area */
   background:var(--bg-alt);
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   overflow:hidden;
   border-bottom:1px solid var(--line);
 }
-.proj-card .thumb img{width:100%;height:100%;object-fit:cover;}
+
+.proj-card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 .proj-card .thumb .ph-mark{
   font-family:var(--font-mono);
   font-size:.7rem;
@@ -375,15 +401,30 @@ p.lead{color:var(--text);font-size:1.1rem;}
   letter-spacing:.1em;
   text-transform:uppercase;
 }
-.proj-card .body{padding:18px 20px 22px;}
+
+/* ---------- text body ---------- */
+.proj-card .body{
+  padding:22px 22px 26px;
+}
+
 .proj-card .index{
   font-family:var(--font-mono);
   font-size:.7rem;
   color:var(--accent);
   letter-spacing:.08em;
 }
-.proj-card h3{margin:6px 0 8px;color:var(--text);}
-.proj-card p{font-size:.92rem;margin:0;}
+
+.proj-card h3{
+  margin:6px 0 8px;
+  color:var(--text);
+}
+
+.proj-card p{
+  font-size:.92rem;
+  margin:0;
+}
+
+/* ---------- status tag ---------- */
 .proj-card .status{
   display:inline-block;
   margin-top:10px;
