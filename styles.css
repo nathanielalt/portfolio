@@ -379,7 +379,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 
 /* ---------- image / thumbnail ---------- */
 .proj-card .thumb{
-  height:350px; /* taller image area */
+  height:400px; /* taller image area */
   background:var(--bg-alt);
   display:flex;
   align-items:center;
@@ -706,7 +706,7 @@ footer.site-footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 80px;
 
   /* text styling (same vibe as before) */
   color: rgba(255,255,255,0.55);
