@@ -194,9 +194,13 @@ p.lead{color:var(--text);font-size:1.1rem;}
   background:var(--navy);
   border-radius:10px;
 }
+
+
 .hero-pane{
   position:relative;
   flex:1;
+   min-height:0;
+   position:relative;
    width: 100%;
   overflow:hidden;
   background:
