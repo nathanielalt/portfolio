@@ -292,14 +292,14 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 /* ---------- about / cards ---------- */
 .about-grid{
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:48px;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
 }
 
 .about-image img{
   width: 100%;
-  max-width: 100%;
   height: auto;
   display: block;
   border-radius: 8px;
@@ -311,8 +311,11 @@ p.lead{color:var(--text);font-size:1.1rem;}
   margin-top: 10px;
   font-size: .78rem;
   line-height: 1.4;
-  color: #5a5a5a; /* medium dark grey */
+  color: #5a5a5a;
   font-family: var(--font-mono);
+
+  max-width: 100%;   /* 🔥 prevents overflow influence */
+  overflow-wrap: break-word;
 }
 
 /* optional file label */
