@@ -298,11 +298,13 @@ p.lead{color:var(--text);font-size:1.1rem;}
 }
 
 .about-image img{
-  width:100%;
-  height:auto;
-  border-radius:8px;
-  object-fit:cover;
-  border:1px solid var(--line);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--line);
 }
 
 .about-caption{
@@ -315,7 +317,7 @@ p.lead{color:var(--text);font-size:1.1rem;}
 
 /* optional file label */
 .about-cap-file{
-  display: inline-block;
+  display: block;
   font-size: .7rem;
   color: var(--accent);
   margin-bottom: 6px;
