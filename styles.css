@@ -714,6 +714,7 @@ figcaption .cap-file{
   display:flex;
   justify-content:space-between;
   align-items:baseline;
+   padding:12px 0px;
   border-bottom:1px solid var(--line);
   font-family:var(--font-mono);
   font-size:.86rem;
