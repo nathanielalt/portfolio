@@ -712,6 +712,30 @@ figcaption .cap-file{
 .contact-field span.k{color:var(--text-faint);text-transform:uppercase;letter-spacing:.06em;font-size:.68rem;}
 .contact-field span.v{color:var(--accent-2);}
 
+/* resume preview — full-page image of the resume, shown below the contact cards */
+.resume-preview{
+  margin:0 auto;
+  max-width:760px;
+  width:100%;
+}
+.resume-preview .frame{
+  background:var(--bg-alt);
+  border:1px solid var(--line);
+  border-radius:6px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:8.5/11;
+  min-height:600px;
+}
+.resume-preview .frame img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#fff;
+}
+
 /* footer */
 /* full-width footer background */
 footer.site-footer{
