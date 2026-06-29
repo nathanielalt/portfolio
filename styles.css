@@ -700,6 +700,16 @@ figcaption .cap-file{
   gap:28px;
 }
 @media (max-width:720px){ .contact-grid{grid-template-columns:1fr;} }
+
+.contact-solo{
+  max-width:480px;
+  margin:0 auto;
+}
+
+.resume-btn-row{
+  text-align:center;
+  margin-top:24px;
+}
 .contact-field{
   display:flex;
   justify-content:space-between;
