@@ -522,6 +522,19 @@ figure.shot{
 figure.shot--large{ max-width:880px; }
 figure.shot--std{ max-width:560px; }
 
+.shot-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  max-width:880px;
+  margin:0 auto;
+  align-items:start;
+}
+.shot-row figure.shot--std{ max-width:none; width:100%; margin:0; }
+@media (max-width:680px){
+  .shot-row{ grid-template-columns:1fr; }
+}
+
 figure.shot .frame{
   background:var(--bg-alt);
   border:1px solid var(--line);
