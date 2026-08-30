@@ -35,9 +35,12 @@
   <section class="tight">
     <div class="wrap">
       <p class="section-label">Overview</p>
-      <p class="lead">Completed as part of my research internship at the University of Toronto Institute for Aerospace Studies (UTIAS). Due to their convenience and versatility, many aeroacoustics labs have replaced wall-mounted microphones in favour of remote microphone probes (RMPs) connected to the surface through a tube. Despite their improvements, RMPs require calibration through a signal transfer function, as the pressure waves are distorted after travelling through the tube. My project aims to determine the effect of various parameters on the resulting transfer function. Some of these parameters included: tube length, tube diameter, ambient temperature and even humidity. As part of this project, numerous side projects were made including a sensor box, a bayesian-inference MCMC algorithm to clean data, and various experiment apparatuses.</p>
-
-      
+      <p class="lead">As part of a research internship at the University of Toronto Institute for Aerospace Studies (UTIAS), I worked under Professor Lavoie in the Fluid Control and Experimental Turbulence (FCET) Laboratory. I was selected as one of two first-year students conducting research at UTIAS and independently led a parametric study of remote microphone probe (RMP) calibration for aeroacoustic wind-tunnel measurements.
+RMPs provide a convenient alternative to wall-mounted microphones by connecting a remotely located microphone to a surface pressure inlet through a tube. However, propagation through the tube attenuates the pressure signal and introduces a phase shift, requiring the probe to be calibrated using a transfer function (TF). These transfer functions are sensitive to geometric and environmental conditions, which can introduce considerable variability between calibrations and affect experimental results. My study investigated 16 variables, including tube length, tube diameter, temperature, and humidity, to better understand their influence and identify configurations that could improve calibration consistency.
+I was responsible for the full experimental workflow, from apparatus and test-matrix design through manufacturing, data acquisition, signal processing, statistical analysis, and presentation of the results at the University of Toronto Undergraduate Engineering Research Day (UnERD). I developed a MATLAB acquisition and analysis pipeline that used FFT-based processing to calculate and compare transfer functions across test conditions.
+Interpreting the results required relating features in the transfer functions, including attenuation, phase shifts, resonant peaks, and other spectral artifacts, to the underlying acoustic and fluid behaviour within the pneumatic tubing. I compared these observations with analytical models of wave propagation, tube resonance, acoustic impedance, and viscothermal attenuation. This included examining how near-wall boundary layers and other tube-flow effects contributed to frequency-dependent pressure losses.
+To support the study, I designed and manufactured parts using SLA printing. Furthermore, I revised the calibration apparatus used by the group and developed a sensor circuit incorporating I2C and SPI communication protocols. Both the apparatus and sensor circuit were retained by the FCET research group for use in subsequent calibration work. The study also identified several geometric and procedural improvements that I proposed to the group, helping inform its continued RMP research and future aeroacoustic measurement practices. Together, the experimental findings, revised apparatus, sensor circuit, and analysis pipeline provided the group with a more repeatable foundation for future probe calibration and testing.
+</p>
     </div>
   </section>
 
@@ -53,6 +56,7 @@
         <li class="tag">SLA and FDM Printing / Slicing</li>
         <li class="tag">Python &amp; MATLAB (signal processing, algorithms)</li>
         <li class="tag">DAQ &amp; data collection</li>
+        <li class="tag">Signal Processing and Analysis</li>
       </ul>
     </div>
   </section>
@@ -70,7 +74,8 @@
           </div>
           <figcaption>
             <span class="cap-file">Circuit Internals</span>
-            Completed sensor circuit box, with a working LCD display. Used to read the ambient temperature, humidity, and pressure in the room. It utilizes two sensors, one using I2C protocol and the other using SPI protocol. Communicates through a Adafruit ItsyBitsy microcontroller programmed in Arduino IDE.
+            Completed sensor circuit box, with a working LCD display. Used to read the ambient temperature, humidity, and pressure in the room. 
+            It utilizes two sensors, one using I2C protocol and the other using SPI protocol. Communicates through an Adafruit ItsyBitsy microcontroller programmed in Arduino IDE. All data is sent to a SPI LCD display, where brightness is tuned using a built-in potentiometer. Calibration was done manually to verified sources.
           </figcaption>
         </figure>
 
@@ -81,7 +86,8 @@
           </div>
           <figcaption>
             <span class="cap-file">Resin Curing</span>
-            SLA printing and curing using water-washable resin.
+            SLA printing and curing using water-washable resin. Resin was used over FDM printers because of its small layer lines. 
+            These small layers guarantee that there is no acoustic leakage in the tubes printed within. All pores and openings were subsequently coated in epoxy to prevent leakage.
           </figcaption>
         </figure>
 
@@ -91,7 +97,7 @@
           </div>
           <figcaption>
             <span class="cap-file">Testing Apparatus</span>
-            Completed testing apparatus. All casings and supports were 3D printed and designed in Fusion 360.
+            The full and labelled testing apparatus in an anechoic chamber used to collect data for this study. All data was collected using a DAQ at a sampling rate of 2^16, with an FFT window size of 2^12. Further data collection and analysis was done using MATLAB. The full script can be found here: https://github.com/nathanielalt/UTIAS-2026-MATLAB-Script
           </figcaption>
         </figure>
         </div>
@@ -100,7 +106,7 @@
           <div class="frame"><img src="media/projects/rmpCAD.png" alt="CAD cross-section of the RMP housing"></div>
            <figcaption>
             <span class="cap-file">RMP CAD</span>
-            CAD of RMP Housing.
+           CAD of the RMP Housing used to contain the microphone in this research study. CAD was done by taking measurements from an existing print and redesigning the part in fusion to be manipulated. 
           </figcaption>
         </figure>
       </div>
