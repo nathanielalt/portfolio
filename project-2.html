@@ -35,7 +35,11 @@
   <section class="tight">
     <div class="wrap">
       <p class="section-label">Overview</p>
-      <p class="lead">As part of the RSX Aerial Design team, we compete in the annual CANSAT competition hosted by the American Astronautical Society (AAS). This year's task was to create an autonomous glider to drop an egg within a designated area. The glider is launched over 700m into the air by a rocket, before releasing, deploying, and navigating autonomously towards the drop zone. My role in this project was focused on the mechanical side, where I designed, iterated and manufactured much of the glider body, payload nosecone and tail.</p>
+      <p class="lead">As part of the RSX Aerial Design Team, I was primarily responsible for the aerodynamic development of an autonomous glider for the AAS CanSat Competition within the mechanical subsystem. I proposed the lifting-body fuselage concept that was ultimately selected for the final vehicle and led much of its aerodynamic development, from early configuration studies through analysis and design refinement.
+I developed a staged workflow that combined rapid, lower-fidelity analysis with more detailed CFD. I first used OpenVSP and VSPAERO to compare more than 20 candidate airfoil profiles and explore a range of fuselage geometries. The most promising configurations were then selected for higher-fidelity analysis in Autodesk CFD, with key results and flow trends also cross-checked using ANSYS Fluent.
+The CFD results helped me examine pressure distributions, streamlines, wake development, and boundary-layer behaviour around the lifting-body fuselage. This analysis indicated premature flow separation and considerable spanwise and tip-flow losses, particularly at the glider’s low-Reynolds-number operating conditions. Based on the observed flow behaviour, I incorporated vortex generators and endplates as passive flow-control devices. In simulation, these changes significantly delayed separation and produced an approximately fivefold increase in lift at the design condition.
+Beyond the glider fuselage, I evaluated rocket nose-cone geometries using Autodesk CFD and OpenRocket, supported CFD-based verification of control mechanisms and aerodynamic interfaces, and assisted with the fibre-composite manufacture of the flight wings. I also played a major role in the refinement of individual parts for electronic and mechanical integration. A significant portion of the tail and release mechanisms were also manufactured and refined by me.
+</p>
     </div>
   </section>
 
@@ -67,17 +71,31 @@
           </div>
           <figcaption>
             <span class="cap-file">Glider Body CFD</span>
-            CFD showing trace airflow over the optimized glider body. Vortex generators are implemented (from past knowledge!) to mitigate boundary layer separation, and end plates are implemented to prevent side air roll up. A Xx improvement on the lift force can be seen. Note that this force is not absolutely accurate but only relatively accurate compared to other models.
+          CFD showing trace airflow over the optimized glider body. Vortex generators are implemented to mitigate boundary layer separation, and end plates are implemented to prevent side air roll up. 
+            A 5x improvement on the lift force was found in comparison to the raw design, along with a significant delay in boundary layer separation.
           </figcaption>
         </figure>
+
+        <figure class="shot shot--large">
+          <div class="frame">
+            <img src="media/projects/VSPaero.png" alt="None">
+          </div>
+          <figcaption>
+            <span class="cap-file">VSPaero</span>
+           Example of an airfoil profile tested in VSPaero. All initial simulations were done in this application at an Re of ~97000. The resulting Cl graphs as a function of AOA were compared between each geometry, and the most promising profiles were taken for further validation. 
+            These designs being the NACA 4421, NACA 4424, and the fx69pr281.
+          </figcaption>
+        </figure>
+        
         <div class="shot-row">
         <figure class="shot shot--std">
           <div class="frame">
-            <img src="media/projects/tail.jpeg" alt="None">
+            <img src="media/projects/final_glider.png" alt="None">
           </div>
           <figcaption>
             <span class="cap-file">T-Tail Manufacturing</span>
-            Completed T-Tail implemented on the final glider design. Servo/circuit integration, and mechanical movement of the elevators can be seen.
+            Final glider design, featuring the glider fuselage that I proposed and designed. The glider frame was 3D printed using a nylon/carbon fibre infused composite. The wings and glider body were both made out of a fibre-glass/resin composite which I helped manufacture. 
+            A significant portion of the tail was also verified by me in CFD and refined to aid integration.
           </figcaption>
         </figure>
 
@@ -87,7 +105,7 @@
           </div>
           <figcaption>
             <span class="cap-file">CANSAT Nosecone</span>
-            CAD on the payload nosecone, implementing a power-series geometry profile to optimize drag.
+           CAD on the payload nosecone, implementing a power-series geometry profile to minimize drag. Numerous geometries were first analyzed using a low-fidelity software (Open Rocket). Promising designs were then 3D modelled and validated using Autodesk CFD.
           </figcaption>
         </figure>
         </div>
@@ -97,8 +115,9 @@
             <img src="media/projects/bodyCAD.png" alt="None">
           </div>
           <figcaption>
-            <span class="cap-file">Glider Body CAD</span>
-            CAD on the optimized glider body, showcasing the vortex generators and endplates on the body. Note that unfortunately these were not implemented on the final glider due to manufacturing issues and timeline pressures.
+            <span class="cap-file">Glider CAD</span>
+           CAD in fusion on the optimized glider body, showcasing the vortex generators and endplates on the body. The vortex generators are directly taken from previous work on flow control, and help mitigate boundary layer separation at low-reynolds numbers causing stall. 
+          The end-plates feature helps prevent tip-flow roll ups from interfering with the surface boundary layer, whilst also extending the effective surface area of the fuselage.
           </figcaption>
         </figure>
 
