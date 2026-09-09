@@ -1,20 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nathan Xia — Engineering Portfolio</title>
-<link rel="icon" type="image/x-icon" href="Icon.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathan Xia — Engineering Portfolio</title>
+
+  <link rel="icon" type="image/x-icon" href="Icon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding-top: 28px;
+    }
+
+    .home-actions .btn {
+      display: inline-flex;
+      flex: 0 1 auto;
+      align-items: center;
+      justify-content: center;
+      min-width: 210px;
+      min-height: 48px;
+      padding: 12px 24px;
+      text-align: center;
+      color: #fff;
+      background: var(--accent, #d2581f);
+      border: 1px solid var(--accent, #d2581f);
+      text-decoration: none;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .home-actions .btn:hover {
+      color: #fff;
+      background: #b94a16;
+      border-color: #b94a16;
+      text-decoration: none;
+    }
+
+    .home-actions .btn:focus-visible {
+      outline: 3px solid var(--navy, #0c2545);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 520px) {
+      .home-actions {
+        flex-direction: column;
+        gap: 14px;
+        padding-top: 24px;
+      }
+
+      .home-actions .btn {
+        flex: 0 1 auto;
+        width: 100%;
+        max-width: 320px;
+        min-width: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="wrap">
-    <a class="brand" href="index.html">NATHAN XIA <small>Engineering Portfolio</small></a>
+    <a class="brand" href="index.html">
+      NATHAN XIA <small>Engineering Portfolio</small>
+    </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">≡</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html" class="active">Home</a></li>
@@ -24,97 +81,96 @@
   </div>
 </nav>
 
-<!--
-Dual Video Screen
--->
+<!-- Dual Video Screen -->
 <header class="hero-frame">
-<div class="hero">
-  <div class="hero-pane">
-     <video autoplay muted loop playsinline>
-  
-      <source src="media/windtunnel.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-pane">
-    <video autoplay muted loop playsinline style="transform:scaleX(-1);">
-      <source src="media/lbm.mp4" type="video/mp4">
-    </video>
-  </div>
+  <div class="hero">
+    <div class="hero-pane">
+      <video autoplay muted loop playsinline>
+        <source src="media/windtunnel.mp4" type="video/mp4">
+      </video>
+    </div>
 
-  <div class="hero-overlay">
-    
-    <p>Engineering Science - University of Toronto</p>
-    <h1>Nathan&nbsp;Xia</h1>
-    <p>Aerospace-focused engineering student working across aeroacoustics, flow control, and computational &amp; experimental fluid dynamics.</p>
+    <div class="hero-pane">
+      <video autoplay muted loop playsinline style="transform:scaleX(-1);">
+        <source src="media/lbm.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-overlay">
+      <p>Engineering Science - University of Toronto</p>
+      <h1>Nathan&nbsp;Xia</h1>
+      <p>Aerospace-focused engineering student working across aeroacoustics, flow control, and computational &amp; experimental fluid dynamics.</p>
+    </div>
   </div>
-</div>
 </header>
 
 <main>
-  <div class="wrap home-actions" aria-label="Portfolio quick links">
+  <div class="wrap home-actions" role="group" aria-label="Portfolio quick links">
     <a class="btn" href="projects.html">View Projects</a>
-    <a class="btn ghost" href="media/Nathan Xia's Resume.pdf" download>Download Resume (PDF)</a>
+    <a class="btn" href="media/Nathan Xia's Resume.pdf" download>
+      Download Resume (PDF)
+    </a>
   </div>
 
- <section>
-  <div class="wrap about-grid">
+  <section>
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">About Me</p>
+        <h2>Hello!</h2>
 
-    <div>
-      <p class="eyebrow">About Me</p>
-      <h2>Hello!</h2>
+        <p class="lead">
+          I’m a second-year Engineering Science student at the University of Toronto, intending to specialize in Aerospace Engineering. My interests centre on flow control and experimental and computational fluid dynamics, with the goal of pursuing graduate research and aerospace R&amp;D.
+        </p>
 
-      <p class="lead">
-        I’m a second-year Engineering Science student at the University of Toronto, intending to specialize in Aerospace Engineering. My interests centre on flow control and experimental and computational fluid dynamics, with the goal of pursuing graduate research and aerospace R&amp;D.
-      </p>
+        <p>
+          My work spans aeroacoustic calibration research at UTIAS, aerodynamic design and mechanical leadership with RSX Aerial, and development of an interactive CFD solver. Across these projects, I combine simulation, experimental design, and hands-on manufacturing to investigate flow behaviour and improve engineering designs.
+        </p>
 
-      <p>
-        My work spans aeroacoustic calibration research at UTIAS, aerodynamic design and mechanical leadership with RSX Aerial, and development of an interactive CFD solver. Across these projects, I combine simulation, experimental design, and hands-on manufacturing to investigate flow behaviour and improve engineering designs.
-      </p>
+        <div class="panel">
+          <h3 style="margin-top:0;">Tools and Languages</h3>
+          <ul class="tag-list">
+            <li class="tag">Fusion 360</li>
+            <li class="tag">SolidWorks</li>
+            <li class="tag">Autodesk CFD</li>
+            <li class="tag">ANSYS Fluent</li>
+            <li class="tag">OpenVSP/VSPAERO</li>
+            <li class="tag">Python</li>
+            <li class="tag">Arduino IDE</li>
+            <li class="tag">MATLAB</li>
+            <li class="tag">C</li>
+            <li class="tag">Java</li>
+          </ul>
+        </div>
 
-      <div class="panel">
-        <h3 style="margin-top:0;">Tools and Languages</h3>
-        <ul class="tag-list">
-          <li class="tag">Fusion 360</li>
-          <li class="tag">SolidWorks</li>
-          <li class="tag">Autodesk CFD</li>
-          <li class="tag">ANSYS Fluent</li>
-          <li class="tag">OpenVSP/VSPAERO</li>
-          <li class="tag">Python</li>
-          <li class="tag">Arduino IDE</li>
-          <li class="tag">MATLAB</li>
-          <li class="tag">C</li>
-          <li class="tag">Java</li>
-        </ul>
+        <div class="resume-btn-row">
+          <a class="btn" href="media/Nathan Xia's Portfolio.pdf" download>
+            Download Portfolio (PDF Version)
+          </a>
+        </div>
       </div>
-      <div class="resume-btn-row">
-      <a class="btn" href="media/Nathan Xia's Portfolio.pdf" download>
-        Download Portfolio (PDF Version)
-      </a>
+
+      <figure class="about-image">
+        <img src="media/home_photo.png" alt="Wind tunnel flow visualization">
+        <figcaption class="about-caption">
+          <span class="about-cap-file">University of Calgary Research</span>
+          Research Opportunity within the applied geochemistry research group at the University of Calgary.
+          <br>
+        </figcaption>
+      </figure>
     </div>
-    </div>
-    
+  </section>
 
-    <figure class="about-image">
-  <img src="media/home_photo.png" alt="Wind tunnel flow visualization">
-
-  <figcaption class="about-caption">
-    <span class="about-cap-file">University of Calgary Research</span>
-    Research Opportunity within the applied geochemistry research group at the University of Calgary.
-    <br>
-  </figcaption>
-</figure>
-
-  </div>
-</section>
   <div class="divider"></div>
 
   <section>
     <div class="wrap">
       <p class="section-label">Featured Work</p>
-      <div class="proj-grid">
 
+      <div class="proj-grid">
         <a class="proj-card" href="project-1.html">
-          <div class="thumb"><img src="media/Utiascover.jpeg" alt="UTIAS Sensors"></div>
+          <div class="thumb">
+            <img src="media/Utiascover.jpeg" alt="UTIAS Sensors">
+          </div>
           <div class="body">
             <span class="index">01 · UTIAS Research</span>
             <h3>Aeroacoustics Parametric Research Project</h3>
@@ -123,7 +179,9 @@ Dual Video Screen
         </a>
 
         <a class="proj-card" href="project-2.html">
-          <div class="thumb"><img src="media/RSXcover.png" alt="Glider CFD"></div>
+          <div class="thumb">
+            <img src="media/RSXcover.png" alt="Glider CFD">
+          </div>
           <div class="body">
             <span class="index">02 · RSX Aerial Design</span>
             <h3>CanSat Autonomous Glider</h3>
@@ -132,7 +190,9 @@ Dual Video Screen
         </a>
 
         <a class="proj-card" href="project-3.html">
-          <div class="thumb"><img src="media/VGcover.jpeg" alt="Flow"></div>
+          <div class="thumb">
+            <img src="media/VGcover.jpeg" alt="Flow">
+          </div>
           <div class="body">
             <span class="index">03 · Science Fair</span>
             <h3>Flow Control Research Project</h3>
@@ -141,7 +201,9 @@ Dual Video Screen
         </a>
 
         <a class="proj-card" href="project-4.html">
-          <div class="thumb"><img src="media/LBMcover.png" alt="Square LBM"></div>
+          <div class="thumb">
+            <img src="media/LBMcover.png" alt="Square LBM">
+          </div>
           <div class="body">
             <span class="index">04 · Personal Project</span>
             <h3>Interactive 2D CFD Solver</h3>
@@ -149,11 +211,9 @@ Dual Video Screen
             <span class="status">Ongoing</span>
           </div>
         </a>
-
       </div>
     </div>
   </section>
-
 </main>
 
 <footer class="site-footer">
@@ -164,9 +224,10 @@ Dual Video Screen
 </footer>
 
 <script>
-  document.getElementById('navToggle')?.addEventListener('click', function(){
+  document.getElementById('navToggle')?.addEventListener('click', function () {
     document.getElementById('navLinks').classList.toggle('open');
   });
 </script>
+
 </body>
 </html>
