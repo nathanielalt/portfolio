@@ -37,7 +37,7 @@
       <p class="section-label">Project at a glance</p>
 <div class="project-intro">
 <div class="project-brief"><p class="project-meta"><strong>Aerodynamic design · Mechanical subsystem</strong><br>2025–2026 CanSat competition</p>
-<h2>The Problem</h2><p>Develop a compact, rocket-deployed autonomous glider and integrate its aerodynamic surfaces, structure, and mechanisms.</p><h3>My Contribution</h3><ul class="std-list"><li>Proposed the selected lifting-body fuselage and screened more than 20 airfoil profiles.</li><li>Refined the fuselage using CFD, vortex generators, and endplates.</li><li>Contributed to composite manufacture, tail components, and mechanical integration.</li></ul><div class="project-result"><span class="result-label">Key Result</span><p><strong>Approximately 5× simulated fuselage lift</strong> versus the baseline without flow-control devices at 20 m/s.</p></div><p class="project-note">Simulation result for the fuselage configuration; team competition results appear below.</p></div>
+<h2>The problem</h2><p>Develop a compact, rocket-deployed autonomous glider and integrate its aerodynamic surfaces, structure, and mechanisms.</p><h3>My Contributions</h3><ul class="std-list"><li>Proposed the selected lifting-body fuselage and screened more than 20 airfoil profiles.</li><li>Refined the fuselage using CFD, vortex generators, and endplates.</li><li>Contributed to composite manufacture, tail components, and mechanical integration.</li></ul><div class="project-result"><span class="result-label">Key result</span><p><strong>Approximately 5× simulated fuselage lift</strong> versus the baseline without flow-control devices at 20 m/s.</p></div><p class="project-note">Simulation result for the fuselage configuration; team competition results appear below.</p></div>
 <figure class="shot project-lead-image">
           <div class="frame">
             <img src="media/projects/CFd.png" alt="None">
@@ -151,12 +151,13 @@
 
   <section class="tight">
     <div class="wrap">
-      <p class="section-label">Challenges + Solutions</p>
-      <ul class="std-list">
-        <li>Integration and manufacturing of mechanical components</li>
-        <li>Reconciling CAD models to manufacturing limitations</li>
-        <li>Working under time pressure and with a large design team</li>
-      </ul>
+      <h2>Challenges + Solutions</h2>
+      <h3 style="margin-top: 1.5rem;">Premature flow separation</h3>
+      <p>CFD indicated separation and spanwise losses around the lifting-body fuselage. I incorporated vortex generators and endplates and compared the modified geometry with the baseline, obtaining approximately five times the simulated fuselage lift at the 20 m/s design speed.</p>
+      <h3 style="margin-top: 1.5rem;">Efficient geometry selection</h3>
+      <p>Evaluating every candidate with detailed CFD would have required substantial iteration time. I used OpenVSP and VSPAERO to screen more than 20 airfoil profiles, then investigated the most promising configurations in Autodesk CFD and cross-checked key flow trends in ANSYS Fluent.</p>
+      <h3 style="margin-top: 1.5rem;">Manufacturing and subsystem integration</h3>
+      <p>The T-tail and camera integration required reconciling CAD assemblies with manufacturing tolerances and the needs of both the mechanical and electrical subsystems. I refined component clearances and interfaces to support reliable fit and straightforward assembly. For load-bearing printed components, I selected build orientations with the expected loading and weaker interlayer bonds in mind, reducing reliance on interlayer adhesion in critical load paths.</p>
     </div>
   </section>
 

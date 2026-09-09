@@ -36,8 +36,8 @@
     <div class="wrap">
       <p class="section-label">Project at a glance</p>
 <div class="project-intro">
-<div class="project-brief"><p class="project-meta"><strong>Independent Developer</strong><br>Ongoing personal project</p>
-<h2>The Problem</h2><p>Build an accessible CFD prototype that connects user-drawn geometry with simulated flow and aerodynamic force histories.</p><h3>What I Developed</h3><ul class="std-list"><li>Implemented a 2D LBM prototype with interactive geometry drawing and autofill.</li><li>Refined boundary conditions and added force extraction.</li><li>Compared NACA 0012 shedding frequency with a published numerical benchmark.</li></ul><div class="project-result"><span class="result-label">Key Result</span><p><strong>Approximately 1.8% difference in Strouhal number</strong>: 1.15 from the solver versus 1.1706 in the reference study.</p></div><p class="project-note">NACA 0012 · Re = 2,000 · angle of attack = 8°. Benchmark scope: shedding frequency.</p></div>
+<div class="project-brief"><p class="project-meta"><strong>Independent developer</strong><br>Ongoing personal project</p>
+<h2>The problem</h2><p>Build an accessible CFD prototype that connects user-drawn geometry with simulated flow and aerodynamic force histories.</p><h3>What I Developed</h3><ul class="std-list"><li>Implemented a 2D LBM prototype with interactive geometry drawing and autofill.</li><li>Refined boundary conditions and added force extraction.</li><li>Compared NACA 0012 shedding frequency with a published numerical benchmark.</li></ul><div class="project-result"><span class="result-label">Key result</span><p><strong>Approximately 1.8% difference in Strouhal number</strong>: 1.15 from the solver versus 1.1706 in the reference study.</p></div><p class="project-note">NACA 0012 · Re = 2,000 · angle of attack = 8°. Benchmark scope: shedding frequency.</p></div>
 <figure class="shot project-lead-image">
           <div class="frame">
             <img src="media/projects/LBM_0012.png" alt="None">
@@ -102,6 +102,18 @@
           
         </div>
       </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="tight">
+    <div class="wrap">
+      <h2>Challenges + Solutions</h2>
+      <h3 style="margin-top: 1.5rem;">Numerical stability</h3>
+      <p>Maintaining stable simulations across different geometries required refinement of the collision operator and boundary conditions. I iterated on these components and tested the prototype with circular, square, and airfoil geometries.</p>
+      <h3 style="margin-top: 1.5rem;">Quantitative benchmarking</h3>
+      <p>Flow visualizations alone could not establish numerical accuracy. I implemented force extraction and used the periodic lift history to estimate shedding frequency, obtaining a Strouhal number approximately 1.8% from the published reference for the NACA 0012 test case.</p>
+    </div>
   </section>
 
   <section class="tight">

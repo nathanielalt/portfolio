@@ -37,7 +37,7 @@
       <p class="section-label">Project at a glance</p>
 <div class="project-intro">
 <div class="project-brief"><p class="project-meta"><strong>Undergraduate research intern</strong><br>Summer 2026</p>
-<h2>The Problem</h2><p>RMP calibration changes with probe geometry and test conditions, introducing uncertainty into aeroacoustic measurements.</p><h3>Research Scope</h3><ul class="std-list"><li>Designed the apparatus and test matrix for a 16-variable parametric study.</li><li>Built a MATLAB acquisition and analysis pipeline for transfer functions and repeatability.</li><li>Developed printed components and a sensor circuit retained by the research group.</li></ul><div class="project-result"><span class="result-label">Key Result</span><p><strong>69% lower TF magnitude standard deviation</strong> with the revised calibration apparatus, relative to the control.</p></div><p class="project-note">Experimentally measured; frequency-averaged standard deviation across repeated calibrations.</p></div>
+<h2>The problem</h2><p>RMP calibration changes with probe geometry and test conditions, introducing uncertainty into aeroacoustic measurements.</p><h3>Research Scope</h3><ul class="std-list"><li>Designed the apparatus and test matrix for a 16-variable parametric study.</li><li>Built a MATLAB acquisition and analysis pipeline for transfer functions and repeatability.</li><li>Developed printed components and a sensor circuit retained by the research group.</li></ul><div class="project-result"><span class="result-label">Key result</span><p><strong>69% lower TF magnitude standard deviation</strong> with the revised calibration apparatus, relative to the control.</p></div><p class="project-note">Experimentally measured; frequency-averaged standard deviation across repeated calibrations.</p></div>
 <figure class="shot project-lead-image">
           <div class="frame">
             <img src="media/projects/apparatus.png" alt="None">
@@ -94,7 +94,8 @@
           </figcaption>
         </figure>
 
-        <figure class="shot shot--large">
+        <div class="shot-row">
+        <figure class="shot shot--std">
           <div class="frame">
             <img src="media/projects/resin.jpeg" alt="None">
           </div>
@@ -105,6 +106,8 @@
           </figcaption>
         </figure>
 
+        
+        </div>
       
         <figure class="shot shot--large">
           <div class="frame"><img src="media/projects/rmpCAD.png" alt="CAD cross-section of the RMP housing"></div>
@@ -137,17 +140,13 @@
 
   <section class="tight">
     <div class="wrap">
-      <p class="section-label">Challenges + Solutions</p>
-      <ul class="std-list">
-        <li>Sensor Calibration: Ensuring that the sensor housed inside the container accurately reflected the ambient conditions of the room rather than its internal microclimate</li>
-        <li>Experimental Design: Isolating over 16 variables to ensure accurate data between manipulations</li>
-        <ul>
-          <li>Isolating and converging on the source of variability</li>
-          <li>Identifying patterns in experimental data and relating them to published models</li>
-          <li>Determining methods to mathematically quantify improvements in the TF</li>
-        </ul>
-        <li>Manufacturing: Designing and slicing prints resistant to SLA warping and support failure</li> 
-      </ul>
+      <h2>Challenges + Solutions</h2>
+      <h3 style="margin-top: 1.5rem;">Calibration repeatability</h3>
+      <p>Small changes in the relative positions of the microphone, speaker, and probe inlet introduced variability between calibrations. I redesigned the apparatus to hold their positions consistent, reducing transfer-function magnitude standard deviation by 69% relative to the control.</p>
+      <h3 style="margin-top: 1.5rem;">Interpreting acoustic behaviour</h3>
+      <p>Changes in probe geometry produced complex shifts in attenuation, phase, and resonant features. I compared controlled parameter variations with wave-propagation and acoustic-impedance models to identify physical explanations and inform improved configurations.</p>
+      <h3 style="margin-top: 1.5rem;">Low-frequency coherence</h3>
+      <p>The original speaker orientation produced poorer coherence at low frequencies. I revised its orientation relative to the reference microphone and probe inlet, improving coherence below 300 Hz.</p>
     </div>
   </section>
 
