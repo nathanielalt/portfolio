@@ -34,13 +34,28 @@
 <main>
   <section class="tight">
     <div class="wrap">
-      <p class="section-label">Overview</p>
-      <p class="lead">As part of a research internship at the University of Toronto Institute for Aerospace Studies (UTIAS), I worked under Professor Lavoie in the Fluid Control and Experimental Turbulence (FCET) Laboratory. I was selected as one of two first-year students conducting research at UTIAS and independently led a parametric study of remote microphone probe (RMP) calibration for aeroacoustic wind-tunnel measurements.
-RMPs provide a convenient alternative to wall-mounted microphones by connecting a remotely located microphone to a surface pressure inlet through a tube. However, propagation through the tube attenuates the pressure signal and introduces a phase shift, requiring the probe to be calibrated using a transfer function (TF). These transfer functions are sensitive to geometric and environmental conditions, which can introduce considerable variability between calibrations and affect experimental results. My study investigated 16 variables, including tube length, tube diameter, temperature, and humidity, to better understand their influence and identify configurations that could improve calibration consistency.
-I was responsible for the full experimental workflow, from apparatus and test-matrix design through manufacturing, data acquisition, signal processing, statistical analysis, and presentation of the results at the University of Toronto Undergraduate Engineering Research Day (UnERD). I developed a MATLAB acquisition and analysis pipeline that used FFT-based processing to calculate and compare transfer functions across test conditions.
-Interpreting the results required relating features in the transfer functions, including attenuation, phase shifts, resonant peaks, and other spectral artifacts, to the underlying acoustic and fluid behaviour within the pneumatic tubing. I compared these observations with analytical models of wave propagation, tube resonance, acoustic impedance, and viscothermal attenuation. This included examining how near-wall boundary layers and other tube-flow effects contributed to frequency-dependent pressure losses.
-To support the study, I designed and manufactured parts using SLA printing. Furthermore, I revised the calibration apparatus used by the group and developed a sensor circuit incorporating I2C and SPI communication protocols. Both the apparatus and sensor circuit were retained by the FCET research group for use in subsequent calibration work. The study also identified several geometric and procedural improvements that I proposed to the group, helping inform its continued RMP research and future aeroacoustic measurement practices. Together, the experimental findings, revised apparatus, sensor circuit, and analysis pipeline provided the group with a more repeatable foundation for future probe calibration and testing.
-</p>
+      <p class="section-label">Project at a glance</p>
+<div class="project-intro">
+<div class="project-brief"><p class="project-meta"><strong>Undergraduate research intern</strong><br>Summer 2026</p>
+<h2>The problem</h2><p>RMP calibration changes with probe geometry and test conditions, introducing uncertainty into aeroacoustic measurements.</p><h3>My contribution</h3><ul class="std-list"><li>Designed the apparatus and test matrix for a 16-variable parametric study.</li><li>Built a MATLAB acquisition and analysis pipeline for transfer functions and repeatability.</li><li>Developed printed components and a sensor circuit retained by the research group.</li></ul><div class="project-result"><span class="result-label">Key result</span><p><strong>69% lower TF magnitude standard deviation</strong> with the revised calibration apparatus, relative to the control.</p></div><p class="project-note">Experimentally measured; frequency-averaged standard deviation across repeated calibrations.</p></div>
+<figure class="shot project-lead-image">
+          <div class="frame">
+            <img src="media/projects/apparatus.png" alt="None">
+          </div>
+          <figcaption>
+            <span class="cap-file">Testing Apparatus</span>
+            The full and labelled testing apparatus in an anechoic chamber used to collect data for this study. All data was collected using a DAQ at a sampling rate of 65,536 Hz, with an FFT window size of 4,096 samples. Further data collection and analysis was done using MATLAB. The full script can be found here: https://github.com/nathanielalt/UTIAS-2026-MATLAB-Script
+          </figcaption>
+        </figure>
+</div>
+<div class="project-details"><h2>Project overview</h2>
+<p>During a summer research internship at the University of Toronto Institute for Aerospace Studies (UTIAS), I independently led a parametric study of remote microphone probe (RMP) calibration in Professor Philippe Lavoie’s Flow Control and Experimental Turbulence (FCET) Laboratory. I was one of two first-year students conducting research at UTIAS.</p>
+<p>RMPs provide a convenient alternative to wall-mounted microphones by connecting a remotely located microphone to a surface pressure inlet through a tube. However, propagation through the tube attenuates the pressure signal and introduces a phase shift, requiring the probe to be calibrated using a transfer function (TF). These transfer functions are sensitive to geometric and environmental conditions, which can introduce considerable variability between calibrations and affect experimental results. My study investigated 16 variables, including tube length, tube diameter, temperature, and humidity, to better understand their influence and identify configurations that could improve calibration consistency.</p>
+<p>I was responsible for the full experimental workflow, from apparatus and test-matrix design through manufacturing, data acquisition, signal processing, statistical analysis, and presentation of the results at the University of Toronto Undergraduate Engineering Research Day (UnERD). I developed a MATLAB acquisition and analysis pipeline that used FFT-based processing to calculate and compare transfer functions across test conditions.</p>
+<p>Interpreting the results required relating features in the transfer functions, including attenuation, phase shifts, resonant peaks, and other spectral artifacts, to the underlying acoustic and fluid behaviour within the pneumatic tubing. I compared these observations with analytical models of wave propagation, tube resonance, acoustic impedance, and viscothermal attenuation. This included examining how near-wall boundary layers and other tube-flow effects contributed to frequency-dependent pressure losses.</p>
+<p>I designed and manufactured SLA-printed components, revised the calibration apparatus, and developed an environmental sensor circuit using I2C and SPI communication. The FCET group retained the apparatus and sensor circuit for subsequent calibration work. The study identified geometric and procedural improvements and provided data and analysis tools for continued RMP research.</p>
+<p>Transfer-function smoothness was assessed using curve tortuosity: the ratio of normalized curve length to the straight-line distance between its endpoints. A value of one represents a straight line. Here, tortuosity describes the plotted transfer function, rather than the physical path of the tube. Repeatability was assessed separately using trial-to-trial standard deviation. See the full report for the methods and comparisons.</p>
+</div>
     </div>
   </section>
 
@@ -75,7 +90,7 @@ To support the study, I designed and manufactured parts using SLA printing. Furt
           <figcaption>
             <span class="cap-file">Circuit Internals</span>
             Completed sensor circuit box, with a working LCD display. Used to read the ambient temperature, humidity, and pressure in the room. 
-            It utilizes two sensors, one using I2C protocol and the other using SPI protocol. Communicates through an Adafruit ItsyBitsy microcontroller programmed in Arduino IDE. All data is sent to a SPI LCD display, where brightness is tuned using a built-in potentiometer. Calibration was done manually to verified sources.
+            It utilizes two sensors, one using I2C protocol and the other using SPI protocol. Communicates through an Adafruit ItsyBitsy microcontroller programmed in Arduino IDE. All data is sent to an SPI LCD display, where brightness is tuned using a built-in potentiometer. Sensor readings were manually compared with reference measurements for calibration.
           </figcaption>
         </figure>
 
@@ -86,27 +101,19 @@ To support the study, I designed and manufactured parts using SLA printing. Furt
           </div>
           <figcaption>
             <span class="cap-file">Resin Curing</span>
-            SLA printing and curing using water-washable resin. Resin was used over FDM printers because of its small layer lines. 
-            These small layers guarantee that there is no acoustic leakage in the tubes printed within. All pores and openings were subsequently coated in epoxy to prevent leakage.
+            SLA printing and curing using water-washable resin. SLA printing was selected for its fine feature resolution and small layer height. 
+            Printed parts were subsequently coated with epoxy to seal pores and reduce the risk of acoustic leakage.
           </figcaption>
         </figure>
 
-        <figure class="shot shot--std">
-          <div class="frame">
-            <img src="media/projects/apparatus.png" alt="None">
-          </div>
-          <figcaption>
-            <span class="cap-file">Testing Apparatus</span>
-            The full and labelled testing apparatus in an anechoic chamber used to collect data for this study. All data was collected using a DAQ at a sampling rate of 2^16, with an FFT window size of 2^12. Further data collection and analysis was done using MATLAB. The full script can be found here: https://github.com/nathanielalt/UTIAS-2026-MATLAB-Script
-          </figcaption>
-        </figure>
+        
         </div>
       
         <figure class="shot shot--large">
           <div class="frame"><img src="media/projects/rmpCAD.png" alt="CAD cross-section of the RMP housing"></div>
            <figcaption>
             <span class="cap-file">RMP CAD</span>
-           CAD of the RMP Housing used to contain the microphone in this research study. CAD was done by taking measurements from an existing print and redesigning the part in fusion to be manipulated. 
+           CAD of the RMP Housing used to contain the microphone in this research study. CAD was done by taking measurements from an existing print and redesigning the part in Fusion 360 for geometric modifications. 
           </figcaption>
         </figure>
       </div>
@@ -120,9 +127,9 @@ To support the study, I designed and manufactured parts using SLA printing. Furt
     <div class="wrap">
       <p class="section-label">Results</p>
       <ul class="std-list">
-        <li>Effectively outlined the relationship between various parameters and RMP transfer functions, significantly increasing the groups understanding</li>
+        <li>Effectively outlined the relationship between various parameters and RMP transfer functions, significantly increasing the group’s understanding</li>
         <li>Extracted and experimentally validated RMP improvements informed by insights revealed by the dataset</li>
-        <li>Determined an improved RMP configuration, improving repeatability by 69%,decreasing tortuosity by 46%, and increasing coherence by 4.6% at frequencies below 300 Hz.</li>
+        <li>Revised the calibration apparatus, reducing the frequency-averaged, trial-to-trial standard deviation of TF magnitude by 69% and TF phase by 33% relative to the control. A change in speaker orientation also improved coherence below 300 Hz.</li>
         <li>Delivered valuable data insight and tools (such as the sensor circuit, redesigned calibration apparatus) to the team at FCET to further optimize future RMP configurations.</li>
         <li>Presented findings at U of T’s UnERD research conference</li>
       </ul>
@@ -135,11 +142,11 @@ To support the study, I designed and manufactured parts using SLA printing. Furt
     <div class="wrap">
       <p class="section-label">Challenges + Solutions</p>
       <ul class="std-list">
-        <li>Sensor Calibration: Ensuring that the sensor housed inside the container accurately reflected the ambient conditions of the room rather than its internal microbiome</li>
+        <li>Sensor Calibration: Ensuring that the sensor housed inside the container accurately reflected the ambient conditions of the room rather than its internal microclimate</li>
         <li>Experimental Design: Isolating over 16 variables to ensure accurate data between manipulations</li>
         <ul>
           <li>Isolating and converging on the source of variability</li>
-          <li>Spotting patterns within experimental and mapping those results to literature</li>
+          <li>Identifying patterns in experimental data and relating them to published models</li>
           <li>Determining methods to mathematically quantify improvements in the TF</li>
         </ul>
         <li>Manufacturing: Designing and slicing prints resistant to SLA warping and support failure</li> 
@@ -169,7 +176,7 @@ To support the study, I designed and manufactured parts using SLA printing. Furt
     <div class="wrap">
       <div class="proj-pagination">
         <a class="page-link" href="projects.html">← All Projects</a>
-        <a class="page-link next" href="project-2.html">Next: Cansat Autonomous Glider →</a>
+        <a class="page-link next" href="project-2.html">Next: CanSat Autonomous Glider →</a>
       </div>
     </div>
   </section>
