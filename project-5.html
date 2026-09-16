@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vortex Generators: Fluent CFD Study — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/x-icon" href="Icon.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="fluent.css">
+<meta name="description" content="A Fluent CFD extension of a NACA 2412 wind-tunnel experiment, documenting solver setup, mesh sensitivity, separation analysis, and experimental uncertainty.">
+</head>
+<body class="fluent-page">
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap cfd-header">
+    <span class="index-tag">Project 05 · CFD Extension · September 2026</span>
+    <h1>Vortex Generators:<br>Fluent CFD Study</h1>
+    <p class="lead">Revisiting a wind-tunnel experiment through numerical simulation, mesh sensitivity, and separation analysis.</p>
+    <a class="cfd-backlink" href="project-3.html">↗ Extension of the Flow Control Research Project</a>
+  </div>
+</header>
+<main>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Project at a Glance</p>
+      <div class="project-intro">
+        <div class="project-brief">
+          <p class="project-meta"><strong>Independent CFD investigation</strong><br>NACA 2412 · Low-Reynolds-number flow · ANSYS Fluent 2025 R2</p>
+          <h2>The Question</h2>
+          <p>Do the control and vortex-generator configurations show similar separation locations in CFD when evaluated at their experimentally identified separation-criterion angles?</p>
+          <h3>My Contributions</h3>
+          <ul class="std-list">
+            <li>Rebuilt the geometry in Fusion 360 and reproduced the tunnel-sized fluid domain.</li>
+            <li>Developed a steady laminar Fluent workflow with local VG refinement and near-wall layers.</li>
+            <li>Compared two meshes and evaluated wall shear, aerodynamic coefficients, and flow visualization.</li>
+          </ul>
+          <div class="project-result"><span class="result-label">Mesh Sensitivity</span><p><strong>0.89% change in lift, 1.37% in drag</strong>, and a <strong>1.3 mm</strong> shift in separation between the two VG meshes.</p></div>
+          <p class="project-note">A two-mesh sensitivity assessment for one configuration. The experimental comparison is preliminary.</p>
+        </div>
+        <figure class="shot project-lead-image">
+          <a class="frame" href="media/projects/fluent/vg-pathlines-side.png" target="_blank" rel="noopener" aria-label="Open full-size VG pathline image">
+            <img src="media/projects/fluent/vg-pathlines-side.png" width="684" height="421" alt="Fluent pathlines passing over a finite wing with a row of vortex generators and a separated downstream region.">
+          </a>
+          <figcaption><span class="cap-file">Flow Around the VG Configuration</span>Pathlines reveal the three-dimensional flow around the wing and VGs. Colours identify tracked particles (Particle ID), not velocity magnitude. Select any figure to view it at full size.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight" id="setup">
+    <div class="wrap">
+      <p class="section-label">01 · Numerical Setup</p>
+      <h2>From Smoke Visualization to CFD</h2>
+      <p class="cfd-wide">The original experiment used separation reaching 30% chord as a visual criterion. I revisited selected configurations at their corresponding experimental criterion angles. This compares separation behaviour across those operating points; it is not a fixed-angle comparison of lift or drag benefits.</p>
+      <div class="table-scroll" role="region" aria-label="Simulation setup" tabindex="0"><table class="cfd-table">
+        <thead><tr><th scope="col">Parameter</th><th scope="col">Setting</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Geometry</th><td>NACA 2412; 75 mm chord × 65 mm span. VG elements: 2 mm height × 4.8 mm length × 1 mm thickness.</td></tr>
+          <tr><th scope="row">Tunnel Domain</th><td>340 mm streamwise × 120 mm high × 75 mm wide; nominal 5 mm clearance at each wingtip.</td></tr>
+          <tr><th scope="row">Operating Point</th><td>0.84 m/s inlet along +X; geometry rotated to the configuration-specific experimental criterion angle.</td></tr>
+          <tr><th scope="row">Fluid and Model</th><td>Constant-density air: ρ = 1.225 kg/m³, μ = 1.7894 × 10<sup>−5</sup> Pa·s; Re<sub>c</sub> ≈ 4,300. Steady, laminar, pressure-based solver; energy and gravity off.</td></tr>
+          <tr><th scope="row">Boundaries</th><td>Velocity inlet; pressure outlet at 0 Pa gauge; stationary no-slip walls on the wing, VGs, and tunnel.</td></tr>
+          <tr><th scope="row">Numerical Methods</th><td>Coupled pressure–velocity scheme; least-squares cell-based gradients; second-order pressure and second-order upwind momentum; global pseudo-time method.</td></tr>
+          <tr><th scope="row">Reference Values</th><td>Area 0.004875 m²; length 0.075 m; speed 0.84 m/s. Lift along +Y and drag along +X, integrated over the airfoil/VG walls only.</td></tr>
+          <tr><th scope="row">Convergence Monitoring</th><td>Residual histories, unsmoothed lift/drag reports (Average Over = 1), and inlet–outlet mass balance; target mass imbalance below 0.1%.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="project-note">Laminar modelling was selected as the baseline at this low chord Reynolds number. Visible vortices and recirculation do not, by themselves, establish turbulence.</p>
+      <ul class="tag-list"><li class="tag">Fusion 360</li><li class="tag">ANSYS Fluent</li><li class="tag">Polyhedral Meshing</li><li class="tag">Mesh Sensitivity</li><li class="tag">Wall-Shear Analysis</li></ul>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight" id="mesh">
+    <div class="wrap">
+      <p class="section-label">02 · Numerical Verification</p>
+      <h2>A Two-Mesh Sensitivity Check</h2>
+      <p class="cfd-wide">For the configuration recorded as the “4 mm VG” case, I refined surface and volume sizing while retaining the geometry, angle, boundary conditions, and solver formulation. Boundary-layer count also increased on the fine mesh.</p>
+      <div class="table-scroll" role="region" aria-label="Mesh settings" tabindex="0"><table class="cfd-table cfd-numeric">
+        <thead><tr><th scope="col">Mesh Setting</th><th scope="col">Medium</th><th scope="col">Fine</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Global Minimum Size</th><td>0.21 mm</td><td>0.146 mm</td></tr>
+          <tr><th scope="row">Global Maximum Size</th><td>8.5 mm</td><td>5.95 mm</td></tr>
+          <tr><th scope="row">Local Curvature Minimum</th><td>0.21 mm</td><td>0.14 mm</td></tr>
+          <tr><th scope="row">Local Curvature Maximum</th><td>5 mm</td><td>3.5 mm</td></tr>
+          <tr><th scope="row">VG Face Target Size</th><td>0.20 mm</td><td>0.14 mm</td></tr>
+          <tr><th scope="row">Boundary Layers</th><td>22</td><td>25</td></tr>
+          <tr><th scope="row">Maximum Volume Cell Length</th><td>8.5 mm</td><td>5.95 mm</td></tr>
+        </tbody>
+      </table></div>
+      <p class="project-note">Polyhedral volume fill; Smooth Transition inflation on the airfoil/VG wall group, with growth rate 1.2 and transition ratio 0.272. Tunnel walls remained no-slip but had no dedicated inflation layers after corner-quality problems. Their boundary-layer resolution remains a limitation.</p>
+      <div class="table-scroll" role="region" aria-label="Mesh sensitivity results" tabindex="0"><table class="cfd-table cfd-numeric">
+        <thead><tr><th scope="col">Quantity</th><th scope="col">Medium</th><th scope="col">Fine</th><th scope="col">Refinement Change</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Lift Coefficient, C<sub>L</sub></th><td>0.4030</td><td>0.3994</td><td>−0.89%</td></tr>
+          <tr><th scope="row">Drag Coefficient, C<sub>D</sub></th><td>0.146</td><td>0.148</td><td>+1.37%</td></tr>
+          <tr><th scope="row">Separation Distance</th><td>34.5 mm</td><td>33.2 mm</td><td>1.3 mm upstream</td></tr>
+          <tr><th scope="row">Separation, x/c</th><td>46.0%</td><td>44.3%</td><td>−1.73 percentage points</td></tr>
+        </tbody>
+      </table></div>
+      <p class="cfd-wide">The observed changes indicate limited sensitivity of these quantities between the two tested meshes. They support the preliminary comparison, but do not establish a formal discretization-error bound or mesh independence for every VG configuration.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight" id="findings">
+    <div class="wrap">
+      <p class="section-label">03 · Findings</p>
+      <h2>Similar Separation Locations, a Shared Offset</h2>
+      <div class="table-scroll" role="region" aria-label="Control and VG results" tabindex="0"><table class="cfd-table cfd-numeric">
+        <thead><tr><th scope="col">Case</th><th scope="col">C<sub>L</sub></th><th scope="col">C<sub>D</sub></th><th scope="col">Separation</th><th scope="col">x/c</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Control — No VG</th><td>0.390</td><td>0.125</td><td>36.9 mm</td><td>49.2%</td></tr>
+          <tr><th scope="row">4 mm VG — Medium</th><td>0.4030</td><td>0.146</td><td>34.5 mm</td><td>46.0%</td></tr>
+          <tr><th scope="row">4 mm VG — Fine</th><td>0.3994</td><td>0.148</td><td>33.2 mm</td><td>44.3%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="project-note">Cases were evaluated at their respective experimental criterion angles. These coefficients therefore should not be interpreted as a fixed-AoA VG performance comparison. Percent chord uses the reported leading-edge separation distances divided by 75 mm.</p>
+      <div class="project-result cfd-finding"><span class="result-label">Interpretation</span><p>The control and VG cases place separation in a similar region—approximately <strong>44–49% chord</strong>—at operating points where the experiment identified separation at <strong>30% chord</strong>. This provides preliminary support for the relative experimental observation, while retaining a downstream offset of roughly <strong>14–19 percentage points</strong>.</p></div>
+      <p class="cfd-wide">The common direction of the discrepancy motivates a systematic-error hypothesis, including uncertainty in the original airspeed measurement. It does not identify airspeed as the cause or rule out geometry and angle errors. Inlet-profile assumptions, tunnel-wall resolution, the visual separation criterion, and the steady-flow model can also contribute. Further sensitivity checks are needed to distinguish these explanations.</p>
+      <figure class="shot shot--large cfd-figure">
+        <a class="frame" href="media/projects/fluent/wall-shear.png" target="_blank" rel="noopener" aria-label="Open full-size wall shear plot"><img src="media/projects/fluent/wall-shear.png" width="1092" height="616" loading="lazy" alt="Streamwise wall shear stress versus position, showing two surface branches and a zero crossing into negative shear."></a>
+        <figcaption><span class="cap-file">Locating Reversed Near-Wall Flow</span>Representative X-wall-shear plot along an airfoil section. Upper and lower surfaces produce separate branches. A zero crossing into negative streamwise shear helps identify reversal; on a rotated, three-dimensional wing, interpretation also requires the local surface direction and flow field.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">04 · Flow Visualization</p>
+      <figure class="shot shot--large cfd-figure">
+        <a class="frame" href="media/projects/fluent/vg-pathlines-span.png" target="_blank" rel="noopener" aria-label="Open full-size spanwise pathline image"><img src="media/projects/fluent/vg-pathlines-span.png" width="680" height="449" loading="lazy" alt="Oblique spanwise view of the vortex-generator wing with curved pathlines in the surrounding separated flow."></a>
+        <figcaption><span class="cap-file">Three-Dimensional Flow Structure</span>An additional view of pathline turning around the VG-equipped wing. This qualitative visualization complements the wall-shear analysis; it does not independently quantify vortex strength or demonstrate turbulence. Colours represent Particle ID.</figcaption>
+      </figure>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">05 · Engineering Decisions</p>
+      <div class="cfd-two-col">
+        <div><h2>What the Workflow Established</h2><ul class="std-list"><li>Separated mesh validity and cell-shape quality from solution sensitivity to refinement.</li><li>Used force histories and mass balance alongside residuals to judge convergence.</li><li>Replaced a visual-only separation estimate with a repeatable wall-shear diagnostic.</li><li>Documented numerical and experimental limitations instead of attributing every discrepancy to the VGs.</li></ul></div>
+        <div><h2>Limits and Next Checks</h2><ul class="std-list"><li>Resolve tunnel-wall velocity gradients more systematically and test inlet-speed uncertainty.</li><li>Compare the control and VG cases in a larger far-field domain to investigate confinement and boundary-condition sensitivity.</li><li>Investigate the oscillating 11.5° case with transient laminar simulation. That unconverged steady run is excluded from the reported findings.</li></ul><p class="project-note">Transient and far-field studies are planned extensions, not completed results.</p></div>
+      </div>
+      <p class="cfd-source">Method references: <a href="https://www.grc.nasa.gov/www/wind/valid/tutorial/spatconv.html">NASA grid-convergence guidance</a> · <a href="https://www.grc.nasa.gov/www/wind/valid/tutorial/valassess.html">NASA validation assessment</a>. Values and figures on this page come from my Fluent runs.</p>
+      <div class="proj-pagination"><a class="page-link" href="project-3.html">← Original Flow Control Experiment</a><a class="page-link next" href="projects.html">All Projects →</a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>Nathan Xia — Engineering Portfolio</span>
+    <span>Built with HTML / CSS</span>
+  </div>
+</footer>
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    const open = document.getElementById('navLinks').classList.toggle('open');
+    this.setAttribute('aria-expanded', String(open));
+  });
+</script>
+</body>
+</html>

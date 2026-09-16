@@ -1,0 +1,32 @@
+/* Fluent extension: uses the portfolio's existing type, colour and spacing tokens. */
+.cfd-header{padding:56px 28px 40px;}
+.cfd-header h1{margin-top:14px;max-width:20ch;}
+.cfd-backlink{font-family:var(--font-mono);font-size:.8rem;}
+.fluent-page .cfd-wide{max-width:88ch;}
+.fluent-page .table-scroll{overflow-x:auto;margin:24px 0 18px;border:1px solid var(--line);border-radius:6px;}
+.cfd-table{border-collapse:collapse;width:100%;font-size:.9rem;text-align:left;}
+.cfd-table th,.cfd-table td{padding:14px 18px;border-bottom:1px solid var(--line);vertical-align:top;}
+.cfd-table thead{background:var(--navy);color:#fff;}
+.cfd-table thead th{font-family:var(--font-mono);font-size:.73rem;font-weight:500;letter-spacing:.03em;}
+.cfd-table tbody th{font-weight:500;color:var(--text);width:25%;}
+.cfd-table td{color:var(--text-dim);}
+.cfd-table tbody tr:nth-child(even){background:var(--bg-alt);}
+.cfd-table tbody tr:last-child>*{border-bottom:0;}
+.cfd-numeric{font-variant-numeric:tabular-nums;min-width:570px;}
+.cfd-numeric td{white-space:nowrap;}
+.fluent-page .project-note{max-width:90ch;}
+.fluent-page .cfd-finding{margin:28px 0;}
+.fluent-page .cfd-finding p{max-width:87ch;}
+.fluent-page figure.cfd-figure{margin-top:28px;}
+.fluent-page figure.cfd-figure .frame{display:block;aspect-ratio:auto;min-height:0;background:#222;}
+.fluent-page figure.cfd-figure .frame img{position:static;width:100%;height:auto;object-fit:contain;}
+.fluent-page .project-lead-image .frame{display:block;}
+.cfd-two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;}
+.cfd-source{margin:30px 0;font-size:.8rem;max-width:90ch;}
+.fluent-page .footer-inner{gap:24px;justify-content:space-between;}
+.fluent-page a:focus-visible,.fluent-page [tabindex]:focus-visible{outline:3px solid var(--accent-2);outline-offset:4px;}
+.proj-card.cfd-card{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;min-height:0;align-items:center;}
+.proj-card.cfd-card .thumb{height:300px;border-bottom:0;border-right:1px solid var(--line);}
+.proj-card.cfd-card .thumb img{object-fit:contain;background:#262626;}
+.proj-card.cfd-card .body{padding:28px;}
+@media(max-width:720px){.cfd-two-col{grid-template-columns:1fr;gap:24px;}.cfd-table th,.cfd-table td{padding:12px;}.fluent-page .proj-pagination{flex-direction:column;}.fluent-page .page-link.next{margin-left:0;text-align:left;}.proj-card.cfd-card{display:block;}.proj-card.cfd-card .thumb{height:240px;border-right:0;border-bottom:1px solid var(--line);}.proj-card.cfd-card .body{padding:18px;}}
