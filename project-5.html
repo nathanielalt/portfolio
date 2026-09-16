@@ -80,7 +80,7 @@
           <tr><th scope="row">Convergence Monitoring</th><td>Residual histories, unsmoothed lift/drag reports (Average Over = 1), and inlet–outlet mass balance; target mass imbalance below 0.1%.</td></tr>
         </tbody>
       </table></div>
-      <p class="project-note">Laminar modelling was selected as the baseline because of the low chord Reynolds number, as well as the laminar filter placed at the start of the wind tunnel in the original investigation. Note that the constrained domain and boundary conditions chosen are all done to mimic the experimental set up.</p>
+      <p class="project-note">Note that these VG dimensions are quite large in proportion to the airfoil, but were kept to match the original investigation. Laminar modelling was selected as the baseline because of the low chord Reynolds number, as well as the laminar filter placed at the start of the wind tunnel in the original investigation. Note that the constrained domain and boundary conditions chosen are all done to mimic the experimental set up. A far field comparison was also conducted to examine the extent to which the wind tunnel constraints affected the experimental results. These used standard symmetry walls and an upstream distance of 5c = 373 mm, a downstream distance of 12c = 900 mm, and a 5c boundary for all other sides where c = chord length.</p>
       <ul class="tag-list"><li class="tag">Fusion 360</li><li class="tag">ANSYS Fluent</li><li class="tag">Polyhedral Meshing</li><li class="tag">Mesh Sensitivity</li><li class="tag">Wall-Shear Analysis</li></ul>
     </div>
   </section>
@@ -91,15 +91,15 @@
       <h2>A Two-Mesh Sensitivity Check</h2>
       <p class="cfd-wide">For the configuration recorded as the “4 mm VG” case, I refined surface and volume sizing while retaining the geometry, angle, boundary conditions, and solver formulation. Boundary-layer count also increased on the fine mesh.</p>
       <div class="table-scroll" role="region" aria-label="Mesh settings" tabindex="0"><table class="cfd-table cfd-numeric">
-        <thead><tr><th scope="col">Mesh Setting</th><th scope="col">Medium</th><th scope="col">Fine</th></tr></thead>
+        <thead><tr><th scope="col">Mesh Setting</th><th scope="col">Medium</th><th scope="col">Fine</th><th scope="col">Far-Field Control</th></tr></thead>
         <tbody>
-          <tr><th scope="row">Global Minimum Size</th><td>0.21 mm</td><td>0.146 mm</td></tr>
-          <tr><th scope="row">Global Maximum Size</th><td>8.5 mm</td><td>5.95 mm</td></tr>
-          <tr><th scope="row">Local Curvature Minimum</th><td>0.21 mm</td><td>0.14 mm</td></tr>
-          <tr><th scope="row">Local Curvature Maximum</th><td>5 mm</td><td>3.5 mm</td></tr>
-          <tr><th scope="row">VG Face Target Size</th><td>0.20 mm</td><td>0.14 mm</td></tr>
-          <tr><th scope="row">Boundary Layers</th><td>22</td><td>25</td></tr>
-          <tr><th scope="row">Maximum Volume Cell Length</th><td>8.5 mm</td><td>5.95 mm</td></tr>
+          <tr><th scope="row">Global Minimum Size</th><td>0.21 mm</td><td>0.146 mm</td><td>0.25 mm</td></tr>
+          <tr><th scope="row">Global Maximum Size</th><td>8.5 mm</td><td>5.95 mm</td><td>10 mm</td></tr>
+          <tr><th scope="row">Local Curvature Minimum</th><td>0.21 mm</td><td>0.14 mm</td><td>0.25 mm</td></tr>
+          <tr><th scope="row">Local Curvature Maximum</th><td>5 mm</td><td>3.5 mm</td><td>5 mm</td></tr>
+          <tr><th scope="row">VG Face Target Size</th><td>0.20 mm</td><td>0.14 mm</td><td>N/A</td></tr>
+          <tr><th scope="row">Boundary Layers</th><td>22</td><td>25</td><td>18 mm</td></tr>
+          <tr><th scope="row">Maximum Volume Cell Length</th><td>8.5 mm</td><td>5.95 mm</td><td>10 mm</td></tr>
         </tbody>
       </table></div>
       <p class="project-note">Polyhedral volume fill; Smooth Transition inflation on the airfoil/VG wall group, with growth rate 1.2 and transition ratio 0.272. Tunnel walls remained no-slip but had no dedicated inflation layers after corner-quality problems. Their boundary-layer resolution remains a limitation.</p>
@@ -124,13 +124,14 @@
         <thead><tr><th scope="col">Case</th><th scope="col">C<sub>L</sub></th><th scope="col">C<sub>D</sub></th><th scope="col">Separation</th><th scope="col">x/c</th></tr></thead>
         <tbody>
           <tr><th scope="row">Control — No VG</th><td>0.390</td><td>0.125</td><td>36.9 mm</td><td>49.2%</td></tr>
+          <tr><th scope="row">Control — Far Field</th><td>0.1538</td><td>0.077</td><td>33.6 mm</td><td>44.8%</td></tr>
           <tr><th scope="row">4 mm VG — Medium</th><td>0.4030</td><td>0.146</td><td>34.5 mm</td><td>46.0%</td></tr>
           <tr><th scope="row">4 mm VG — Fine</th><td>0.3994</td><td>0.148</td><td>33.2 mm</td><td>44.3%</td></tr>
         </tbody>
       </table></div>
       <p class="project-note">Cases were evaluated at their respective experimental criterion angles. These coefficients therefore should not be interpreted as a fixed-AoA VG performance comparison. Percent chord uses the reported leading-edge separation distances divided by 75 mm.</p>
       <div class="project-result cfd-finding"><span class="result-label">Interpretation</span><p>The control and VG cases place separation in a similar region, approximately <strong>44–49% chord</strong>, at operating points where the experiment identified separation at <strong>30% chord</strong>. This provides preliminary support for the relative experimental observation, while retaining a downstream offset of roughly <strong>14–19 percentage points</strong>.</p></div>
-      <p class="cfd-wide">The common direction of the discrepancy motivates a systematic-error hypothesis, including uncertainty in the original airspeed measurement. It does not identify airspeed as the cause or rule out geometry and angle errors. Inlet-profile assumptions, tunnel-wall resolution, the visual separation criterion, and the steady-flow model can also contribute. Further sensitivity checks are needed to distinguish these explanations.</p>
+      <p class="cfd-wide">The common direction of the discrepancy motivates a systematic-error hypothesis, including uncertainty in the original airspeed measurement. It does not identify airspeed as the cause or rule out geometry and angle errors. Inlet-profile assumptions, tunnel-wall resolution, the visual separation criterion, and the steady-flow model can also contribute. Further sensitivity checks are needed to distinguish these explanations. The far field case also highlights sensitivities to the domain, highlighting the limitations of the original wind tunnel investigation.</p>
       <figure class="shot shot--large cfd-figure">
         <a class="frame" href="media/projects/wall-shear.png" target="_blank" rel="noopener" aria-label="Open full-size wall shear plot"><img src="media/projects/wall-shear.png" width="1092" height="616" loading="lazy" alt="Streamwise wall shear stress versus position, showing two surface branches and a zero crossing into negative shear."></a>
         <figcaption><span class="cap-file">Locating Reversed Near-Wall Flow</span>Representative X-wall-shear plot along an airfoil section. Upper and lower surfaces produce separate branches. A zero crossing into negative streamwise shear helps identify reversal; on a rotated, three-dimensional wing, interpretation also requires the local surface direction and flow field.</figcaption>
