@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabletop Wind Tunnel — Nathan Xia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/x-icon" href="Icon.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="tunnel.css">
+<meta name="description" content="Designing and 3D printing a tabletop smoke-visualization wind tunnel, with a custom inlet, diffuser, honeycomb and fan-exhaust-assisted smoke delivery.">
+</head>
+<body class="tunnel-page">
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">NATHAN XIA <small>Eng. Portfolio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">≡</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="proj-header">
+  <div class="wrap tunnel-header">
+    <span class="index-tag">Project 06 · Personal Project · 2026</span>
+    <h1>Tabletop Wind Tunnel <span class="badge-ongoing">Ongoing</span></h1>
+    <p class="lead">From CAD to visible flow: a compact, 3D-printed tunnel with a custom smoke-delivery system.</p>
+  </div>
+</header>
+<main>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">Project at a Glance</p>
+      <div class="project-intro">
+        <div class="project-brief">
+          <p class="project-meta"><strong>Independent Design and Fabrication</strong><br>Fusion 360 · FDM 3D Printing · Experimental Flow Visualization</p>
+          <h2>The Problem</h2>
+          <p>Build a compact tabletop wind tunnel that produces visible smoke streaks while keeping the structure, airflow path, and smoke source practical to fabricate and modify.</p>
+          <h3>What I Developed</h3>
+          <ul class="std-list">
+            <li>Modelled a modular inlet, honeycomb, test section, and downstream diffuser in Fusion 360.</li>
+            <li>Fabricated PLA components using a Bambu Lab A1 mini, iterating on wall thickness and printable geometry.</li>
+            <li>Developed a smoke chamber, injection rake, and return tubing that diverts part of the fan exhaust into the smoke supply.</li>
+          </ul>
+          <div class="project-result"><span class="result-label">Key Result</span><p><strong>Visible smoke streaks achieved during testing.</strong> Iteration improved tracer delivery, while repeatability, chamber sealing, and heat management remain active development areas.</p></div>
+        </div>
+        <figure class="shot project-lead-image">
+          <a class="frame" href="media/projects/tabletop-tunnel-assembly.png" target="_blank" rel="noopener" aria-label="Open full-size tunnel assembly CAD image">
+            <img src="media/projects/tabletop-tunnel-assembly.png" width="1145" height="671" alt="Fusion 360 assembly of the tabletop tunnel, showing the flared inlet, honeycomb, test section, diffuser, smoke chamber and connecting tubing.">
+          </a>
+          <figcaption><span class="cap-file">Integrated Tunnel Assembly</span>CAD layout of the inlet and honeycomb, central viewing section, diffuser, and external smoke-delivery circuit. The modular construction allows individual parts to be revised without rebuilding the entire tunnel.</figcaption>
+        </figure>
+      </div>
+      <ul class="tag-list tunnel-tags"><li class="tag">Fusion 360 / CAD</li><li class="tag">CAM / Print Preparation</li><li class="tag">FDM 3D Printing</li><li class="tag">Design for Manufacture</li><li class="tag">Flow Visualization</li><li class="tag">Iterative Testing</li></ul>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">01 · Airflow and Mechanical Design</p>
+      <div class="tunnel-columns">
+        <div><h2>A Compact Suction Tunnel</h2>
+          <p>A downstream fan draws air through a shaped inlet and honeycomb into the test section. The inlet contracts toward the viewing region, while the honeycomb is intended to reduce transverse flow. The downstream diffuser expands the passage toward the fan.</p>
+          <p>The test-section height is approximately 80 mm. The compact layout balances viewing access, printable component sizes, and the space needed for the inlet and diffuser.</p>
+        </div>
+        <div><h2>Fan-Assisted Smoke Delivery</h2>
+          <p>Part of the fan exhaust is routed back to the incense chamber to help carry smoke into the injection system. The main tunnel remains open to the room: this is an <strong>open-circuit tunnel with a partial exhaust return for smoke delivery</strong>, rather than a fully closed-return wind tunnel.</p>
+          <p>The smoke rake was revised to approximately 12 outlets, each 1 mm in diameter. Testing focused on balancing smoke production, delivery resistance, leakage, and dilution by the main airflow.</p>
+        </div>
+      </div>
+      <div class="project-details"><h2>CAD to Printed Hardware</h2>
+        <p>I used Fusion 360 to develop the tunnel sections, patterned honeycomb, chamber, and connecting tubes. The CAD/CAM workflow centred on modelling, slicing, print preparation, and FDM fabrication. Nominal wall thickness was reduced from 5 mm to 3 mm to limit material use while retaining a practical structure.</p>
+        <p>Separating the tunnel into printed components made it possible to revise smoke routing and interfaces as test results exposed problems. Fit, sealing, material consumption, and the thermal limits of PLA became design constraints alongside the airflow geometry.</p>
+      </div>
+    </div>
+  </section>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">02 · Design Details</p>
+      <div class="gallery">
+        <figure class="shot shot--large">
+          <a class="frame" href="media/projects/tabletop-tunnel-tubing.png" target="_blank" rel="noopener" aria-label="Open full-size smoke tubing CAD image">
+            <img src="media/projects/tabletop-tunnel-tubing.png" width="1735" height="1027" loading="lazy" alt="Fusion 360 view of separate smoke-delivery tube sections, elbows, connectors and a support component.">
+          </a>
+          <figcaption><span class="cap-file">Smoke-Delivery Tubing · Fusion 360</span>Separate straight sections, elbows, and connection features developed for routing air and smoke around the tunnel. The evolving delivery path addressed smoke pooling in the chamber and insufficient transport toward the injection rake.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">03 · Challenges + Solutions</p>
+      <div class="tunnel-challenges">
+        <article><h3>Smoke Pooling and Weak Delivery</h3><p>Early tests produced smoke in the source chamber without consistently carrying it into the viewing section. Opening the lid changed both ember intensity and smoke transport, indicating that the chamber airflow mattered as much as smoke production. I revised the delivery path and incorporated the fan-exhaust feed to help move smoke toward the rake.</p></article>
+        <article><h3>Inconsistent Smoke Streaks</h3><p>Smoke leaving a tube did not always produce distinct streaks in the test section. I investigated rake openings, gaps around the injection assembly, filter resistance, and the balance between fan flow and smoke supply. Some tests produced clear visualization; repeatability remains a focus.</p></article>
+        <article><h3>Incense Orientation and Supply</h3><p>Backflow cones initially allowed smoke to collect low in the chamber. Breaking up a cone improved upward transport, and later tests showed that vertically held incense sticks produced more useful smoke than the earlier arrangement. A holder for multiple upright sticks was identified as a next iteration for a more consistent supply.</p></article>
+        <article><h3>Heat Distortion and Lid Leakage</h3><p>The intense heat from cone incense warped the plastic, while an imperfect lid seal allowed smoke to escape. These tests exposed the need to improve thermal separation around the source and the chamber closure. Lower-intensity stick incense is part of the refinement direction; a durable heat-management and sealing solution remains to be verified.</p></article>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">04 · Results and Next Steps</p>
+      <div class="tunnel-columns">
+        <div><h2>What the Prototype Established</h2><ul class="std-list"><li>Translated a modular Fusion 360 assembly into printed tunnel hardware.</li><li>Achieved visible smoke streaks in the test section during successful trials.</li><li>Identified chamber airflow, incense orientation, and delivery-path losses as practical influences on visualization.</li><li>Used test observations to guide changes to the smoke circuit and printed components.</li></ul></div>
+        <div><h2>What Comes Next</h2><ul class="std-list"><li>Improve smoke consistency with controlled source positioning and supply.</li><li>Resolve chamber heat distortion and lid leakage, then repeat visualization trials.</li><li>Document the assembled prototype and smoke flow using the media spaces below.</li></ul><p class="project-note">Results are qualitative. Airspeed, flow uniformity, and turbulence intensity have not been quantified for this tabletop build.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="tight">
+    <div class="wrap">
+      <p class="section-label">05 · Prototype Documentation</p>
+      <div class="gallery">
+        <figure class="shot shot--large">
+          <div class="frame">
+            <!-- VIDEO SLOT: replace the following placeholder div with:
+            <video controls playsinline preload="metadata"><source src="media/projects/tabletop-tunnel-demo.mp4" type="video/mp4">Your browser does not support embedded video.</video>
+            -->
+            <div class="video-placeholder"><span class="play-ring" aria-hidden="true"></span><span class="ph-text">Flow Visualization Video · Coming Soon</span></div>
+          </div>
+          <figcaption><span class="cap-file">Smoke Delivery in Operation</span>Space reserved for a demonstration of smoke entering the test section, showing streak visibility and consistency during a representative run.</figcaption>
+        </figure>
+        <figure class="shot shot--large">
+          <div class="frame">
+            <!-- PHOTO SLOT: replace the following placeholder div with:
+            <img src="media/projects/tabletop-tunnel-prototype.jpg" loading="lazy" alt="Assembled 3D-printed tabletop wind tunnel with its smoke chamber and fan-exhaust return tubing.">
+            -->
+            <div class="img-placeholder"><span class="ph-icon" aria-hidden="true"></span><span class="ph-text">Assembled Prototype Photo · Coming Soon</span></div>
+          </div>
+          <figcaption><span class="cap-file">From CAD to the Workbench</span>Space reserved for the completed assembly, including the printed inlet and diffuser, viewing section, external smoke chamber, and exhaust-return tubing.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section class="tight"><div class="wrap"><div class="proj-pagination"><a class="page-link" href="project-5.html">← Fluent CFD Study</a><a class="page-link next" href="projects.html">All Projects →</a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>Nathan Xia — Engineering Portfolio</span>
+    <span>Built with HTML / CSS</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('navToggle')?.addEventListener('click', function(){
+    const open = document.getElementById('navLinks').classList.toggle('open');
+    this.setAttribute('aria-expanded', String(open));
+  });
+</script>
+</body>
+</html>
