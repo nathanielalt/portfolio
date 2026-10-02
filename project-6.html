@@ -199,13 +199,20 @@
 
       <div class="gallery">
         <figure class="shot shot--large">
-          <div class="frame">
-            <video controls playsinline preload="metadata" aria-label="Tabletop wind tunnel smoke-visualization demonstration">
-              <source src="media/projects/windtunnel3d.MOV">
-              Your browser does not support this video.
-              <a href="media/projects/windtunnel3d.MOV">Open the demonstration video.</a>
-            </video>
-          </div>
+          <div class="frame" style="aspect-ratio:auto; background:#000;">
+  <video
+    controls
+    muted
+    playsinline
+    preload="metadata"
+    style="position:static; display:block; width:100%; height:auto; max-height:80vh; object-fit:contain;"
+    onvolumechange="if (!this.muted) this.muted = true;"
+    aria-label="Tabletop wind tunnel smoke-visualization demonstration"
+  >
+    <source src="media/projects/windtunnel3d.MOV">
+    Your browser does not support this video.
+  </video>
+</div>
           <figcaption>
             <span class="cap-file">Smoke Delivery in Operation</span>
             Operating demonstration showing visible smoke streaks passing through the test section. Incense smoke is supplied through the injection rake, with part of the downstream fan exhaust redirected into the smoke chamber to assist delivery. The streaks provide a qualitative view of the airflow and demonstrate the functioning smoke-transport system; their visibility depends on the balance between smoke supply and the main tunnel flow.
