@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LBM D2Q9 CFD Solver — Nathan Xia</title>
+<title>D2Q9 Lattice Boltzmann CFD Solver — Nathan Xia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="icon" type="image/x-icon" href="Icon.jpg">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,28 +36,28 @@
 <main>
   <section class="tight">
     <div class="wrap">
-      <p class="section-label">Project at a glance</p>
+      <p class="section-label">Project Overview</p>
 
       <div class="project-intro">
         <div class="project-brief">
           <p class="project-meta">
-            <strong>Independent developer</strong><br>
+            <strong>Independent CFD Development</strong><br>
             Python · C++ · D2Q9 LBM · Smagorinsky LES
           </p>
 
-          <h2>The Problem</h2>
-          <p>Early CFD exploration often requires substantial setup before a geometry can be analyzed. This project investigates a lightweight, interactive solver that converts user-defined geometry into interpretable flow fields and aerodynamic trends while keeping the underlying numerical method visible.</p>
+          <h2>Project Objective</h2>
+          <p>Conventional CFD workflows often require substantial setup before a geometry can be analyzed. The objective of this project is to develop a lightweight, interactive CFD solver capable of generating flow fields and aerodynamic data from user-defined geometries while maintaining direct access to the underlying numerical method.</p>
 
-          <h3>What I Engineered</h3>
+          <h3>Solver Implementation</h3>
           <ul class="std-list">
-            <li>Developed a D2Q9 lattice Boltzmann solver from the governing distribution functions rather than wrapping an existing CFD package.</li>
+            <li>Developed a D2Q9 lattice Boltzmann solver directly from the governing distribution functions, without relying on existing CFD software.</li>
             <li>Implemented inlet, outlet, wall, and interpolated curved-boundary treatments; Smagorinsky subgrid modelling; and momentum-exchange lift and drag extraction.</li>
-            <li>Built interactive geometry drawing, breadth-first-search autofill, NACA airfoil import, flow-field visualization, and automated force-history analysis.</li>
-            <li>Ported the solver from Python to C++, reducing runtime by approximately 15× before further compiler optimization.</li>
+            <li>Implemented interactive geometry drawing, breadth-first-search autofill, NACA airfoil import, flow-field visualization, and automated force-history analysis.</li>
+            <li>Ported the solver from Python to C++, achieving an approximately 15× speedup before further compiler optimization.</li>
           </ul>
 
           <div class="project-result">
-            <span class="result-label">Validation Results</span>
+            <span class="result-label">Benchmark Results</span>
             <p><strong>NACA 0012, Re = 2,000:</strong> St = 1.1895 versus 1.1706 published (1.6% difference); mean C<sub>L</sub> = 0.370 versus 0.355 (4.1% difference).</p>
             <p><strong>Cylinder, Re = 150:</strong> C<sub>D</sub> = 1.409 versus 1.39 published (1.4% difference); St = 0.195 versus 0.183 (6.6% difference).</p>
           </div>
@@ -70,28 +70,28 @@
             <img src="media/projects/LBM_0012.png" alt="Lift history from a NACA 0012 lattice Boltzmann simulation">
           </div>
           <figcaption>
-            <span class="cap-file">NACA 0012 · Quantitative benchmark</span>
-            Periodic lift history for a NACA 0012 airfoil at Re = 2,000 and 8° angle of attack. In the refined 1,200 × 600-node C++ case, 16 complete shedding periods gave St = 1.1895 ± 0.0271, or 1.6% above the published value of 1.1706. The mean lift coefficient was 0.370 versus 0.355 in the reference solution.
+            <span class="cap-file">Figure 1. NACA 0012 Lift Coefficient History</span>
+            Lift coefficient history for a NACA 0012 airfoil at Re = 2,000 and an angle of attack of 8°. Analysis of 16 complete shedding periods in the refined 1,200 × 600-node C++ simulation yielded St = 1.1895 ± 0.0271, approximately 1.6% above the published value of 1.1706. The mean lift coefficient was 0.370, compared with 0.355 in the reference solution.
           </figcaption>
         </figure>
       </div>
 
       <div class="project-details">
-        <h2>From numerical method to working solver</h2>
-        <p>I began by comparing finite-difference, finite-volume, and lattice Boltzmann approaches against the project requirement: accept varied geometry without forcing a beginner to generate a body-fitted mesh. I selected LBM because its regular lattice makes geometry insertion, local updates, and future parallelization comparatively direct, while remaining well suited to incompressible external-flow visualization.</p>
+        <h2>Numerical Methodology and Solver Development</h2>
+        <p>Finite-difference, finite-volume, and lattice Boltzmann methods were evaluated against the requirement to accommodate varied geometries without requiring the user to generate a body-fitted mesh. I selected LBM because its regular lattice simplifies geometry insertion, local numerical updates, and future parallelization, while remaining suitable for incompressible external-flow visualization.</p>
 
-        <p>The solver advances nine particle-distribution populations per node through collision and streaming. Macroscopic density and velocity are reconstructed from those distributions, while viscosity and Reynolds number are controlled in lattice units through the relaxation time. I first implemented and tested the method in Python, then rewrote the solver in C++ once numerical behaviour had stabilized.</p>
+        <p>The solver advances nine particle-distribution populations per node through collision and streaming. Macroscopic density and velocity are reconstructed from these distributions, while viscosity and Reynolds number are controlled in lattice units through the relaxation time. The initial implementation was developed and tested in Python before being ported to C++ following improvements in numerical stability.</p>
 
-        <h3>Boundary conditions and stability</h3>
-        <p>Most of the development effort was not the base D2Q9 loop, but making open-domain simulations behave physically. I tested Zou–He and equilibrium inlets, convective and non-equilibrium-extrapolation outlets, slip-symmetry far-field boundaries, and multiple bounce-back formulations. The current prototype uses a smoothed equilibrium inlet, a non-equilibrium-extrapolation outlet, and interpolated bounce-back at solid surfaces.</p>
+        <h3>Boundary Conditions and Numerical Stability</h3>
+        <p>Development focused primarily on boundary-condition implementation and the numerical stability of open-domain simulations. I tested Zou–He and equilibrium inlets, convective and non-equilibrium-extrapolation outlets, slip-symmetry far-field boundaries, and multiple bounce-back formulations. The current prototype uses a smoothed equilibrium inlet, a non-equilibrium-extrapolation outlet, and interpolated bounce-back at solid surfaces.</p>
 
-        <p>At low relaxation times and higher Reynolds numbers, reflected disturbances and high-wavenumber modes caused non-physical streaking and eventual divergence. I diagnosed the instability through domain-size studies, boundary-condition comparisons, and local-velocity behaviour, then added a Smagorinsky subgrid model to increase local effective viscosity only where the flow required stabilization. This allowed cases near τ = 0.51 to remain stable without applying the severe global damping seen in earlier versions.</p>
+        <p>At low relaxation times and higher Reynolds numbers, reflected disturbances and high-wavenumber modes produced non-physical streaking and eventual divergence. The instability was investigated through domain-size studies, boundary-condition comparisons, and analysis of local velocity fields. A Smagorinsky subgrid model was subsequently implemented to provide localized increases in effective viscosity. This allowed cases near τ = 0.51 to remain stable without the excessive global damping observed in earlier implementations.</p>
 
-        <h3>Geometry and aerodynamic loads</h3>
-        <p>Users can draw arbitrary obstacles on a grid; breadth-first search fills closed shapes automatically. Airfoil coordinates can also be imported directly. For curved surfaces, I fitted and sampled the geometry to determine link distances for interpolated bounce-back, reducing the geometric error of a purely stair-stepped wall. Lift and drag are recovered with the momentum-exchange method and recorded as time histories for transient and frequency analysis.</p>
+        <h3>Geometry Representation and Aerodynamic Loads</h3>
+        <p>Users can draw arbitrary obstacles on a grid, with breadth-first search used to fill closed geometries automatically. Airfoil coordinates can also be imported directly. For curved surfaces, the geometry is fitted and sampled to determine link distances for interpolated bounce-back, reducing the geometric error associated with a stair-stepped boundary representation. Lift and drag are calculated using the momentum-exchange method and recorded as time histories for transient and frequency analysis.</p>
 
-        <h3>C++ port and computational performance</h3>
-        <p>A direct Python-to-C++ port produced an approximately 15× speedup. Compiling the C++ implementation with <code>-O3</code> reduced a 400 × 200-node, 1,000-step test from 120.07 s in the debug build to 3.18 s without plotting. The larger 1,200 × 600-node validation cases ran at approximately 45–51 ms per time step. The next performance stage is a GPU-native update kernel with fused collision and streaming and more efficient memory access.</p>
+        <h3>C++ Implementation and Computational Performance</h3>
+        <p>A direct Python-to-C++ port produced an approximately 15× speedup. Compiling the C++ implementation with <code>-O3</code> reduced a 400 × 200-node, 1,000-step test from 120.07 s in the debug build to 3.18 s without plotting. The larger 1,200 × 600-node validation cases ran at approximately 45–51 ms per time step. Further performance improvements will focus on a GPU-native update kernel with fused collision and streaming operations and more efficient memory access.</p>
       </div>
     </div>
   </section>
@@ -101,8 +101,8 @@
       <p class="section-label">Validation</p>
 
       <div class="project-details">
-        <h2>Testing more than visual plausibility</h2>
-        <p>I used two complementary benchmarks. The airfoil case tests separated flow, unsteady lift, and chord-based shedding frequency around an aerodynamic geometry. The cylinder case tests a canonical bluff-body wake with well-established drag and Strouhal values. Frequencies were calculated from repeated force-history peaks after discarding the initial transient.</p>
+        <h2>Benchmark Methodology and Results</h2>
+        <p>Two complementary benchmark cases were selected. The airfoil case evaluates separated flow, unsteady lift, and chord-based shedding frequency around an aerodynamic geometry. The cylinder case evaluates a canonical bluff-body wake with established reference values for drag and Strouhal number. Shedding frequencies were calculated from successive force-history peaks after excluding the initial transient.</p>
 
         <h3>NACA 0012 · Re = 2,000 · α = 8°</h3>
         <ul class="std-list">
@@ -113,7 +113,7 @@
           <li>17 detected peaks and 16 complete shedding periods; uncertainty of the mean St = ±0.0068.</li>
         </ul>
 
-        <h3>Circular cylinder · Re = 150</h3>
+        <h3>Circular Cylinder · Re = 150</h3>
         <ul class="std-list">
           <li>Interpolated-boundary result: mean C<sub>D</sub> = 1.4089 versus approximately 1.39 published: 1.4% difference.</li>
           <li>St = 0.1951 versus 0.183 published: 6.6% difference.</li>
@@ -128,7 +128,7 @@
 
   <section class="tight">
     <div class="wrap">
-      <p class="section-label">Pictures</p>
+      <p class="section-label">Flow Visualization and Solver Interface</p>
 
       <div class="gallery">
         <figure class="shot shot--large">
@@ -138,8 +138,8 @@
             </video>
           </div>
           <figcaption>
-            <span class="cap-file">Interactive geometry simulation</span>
-            Working grid interface for drawing an arbitrary obstacle and running the solver. Closed boundaries can be filled automatically with breadth-first search. The velocity field shows wake development and vortex roll-up while the solver records aerodynamic force histories for quantitative analysis.
+            <span class="cap-file">Figure 2. Interactive Geometry Definition and Simulation</span>
+            Demonstration of the grid-based interface for defining arbitrary obstacle geometries and executing simulations. Closed boundaries are filled automatically using breadth-first search. The velocity field illustrates wake development and vortex roll-up, while aerodynamic force histories are recorded for quantitative analysis.
           </figcaption>
         </figure>
 
@@ -149,8 +149,8 @@
               <img src="media/LBMcover.png" alt="Velocity field and von Kármán wake behind a square obstacle">
             </div>
             <figcaption>
-              <span class="cap-file">Square obstacle · Velocity field</span>
-              Flow around a sharp-cornered square obstacle. The case was used to stress-test collision stability and wall treatment; the wake develops an alternating von Kármán vortex street without requiring a body-fitted mesh.
+              <span class="cap-file">Figure 3. Velocity Field Around a Square Obstacle</span>
+              Simulated flow around a sharp-cornered square obstacle, used to assess collision stability and wall-boundary treatment. The wake exhibits an alternating von Kármán vortex street on the Cartesian lattice without requiring a body-fitted mesh.
             </figcaption>
           </figure>
 
@@ -159,8 +159,8 @@
               <img src="media/projects/LBM NACA.png" alt="Separated velocity field around a NACA 2412 airfoil at high angle of attack">
             </div>
             <figcaption>
-              <span class="cap-file">NACA 2412 · Separated flow</span>
-              Velocity field around a NACA 2412 airfoil at 20° angle of attack. The simulation resolves leading-edge separation, a broad recirculating wake, and periodic trailing-edge shedding; this case was used as a demanding qualitative stability test rather than a validation case.
+              <span class="cap-file">Figure 4. Separated Flow Around a NACA 2412 Airfoil</span>
+              Velocity field around a NACA 2412 airfoil at an angle of attack of 20°. The simulation exhibits leading-edge separation, a broad recirculating wake, and periodic trailing-edge shedding. This configuration was used to assess numerical stability under separated-flow conditions and was not included in the quantitative validation study.
             </figcaption>
           </figure>
         </div>
@@ -172,22 +172,22 @@
 
   <section class="tight">
     <div class="wrap">
-      <p class="section-label">Engineering Challenges + Solutions</p>
+      <p class="section-label">Numerical Challenges and Limitations</p>
 
-      <h3 style="margin-top: 1.5rem;">Open-boundary reflections</h3>
-      <p>Early pressure and force histories drifted because disturbances reflected from the outlet and interacted with the body. I compared multiple inlet/outlet formulations, initialized the domain at the freestream equilibrium state to reduce the startup transient, and adopted a non-equilibrium-extrapolation outlet for the current solver.</p>
+      <h3 style="margin-top: 1.5rem;">Open-Boundary Reflections</h3>
+      <p>Initial pressure and force histories exhibited drift due to disturbances reflecting from the outlet and interacting with the body. I compared multiple inlet and outlet formulations, initialized the domain at the freestream equilibrium state to reduce the startup transient, and adopted a non-equilibrium-extrapolation outlet for the current solver.</p>
 
-      <h3 style="margin-top: 1.5rem;">High-Reynolds-number instability</h3>
-      <p>As τ approached 0.5, high-speed local regions produced streaking and eventual divergence. Domain studies separated blockage effects from collision instability, and a Smagorinsky subgrid model supplied localized dissipation while preserving resolved wake structures.</p>
+      <h3 style="margin-top: 1.5rem;">Numerical Instability at Higher Reynolds Numbers</h3>
+      <p>As τ approached 0.5, regions of high local velocity produced non-physical streaking and eventual divergence. Domain-size studies were used to distinguish blockage effects from collision instability. A Smagorinsky subgrid model was implemented to provide localized dissipation while retaining resolved wake structures.</p>
 
-      <h3 style="margin-top: 1.5rem;">Curved geometry on a Cartesian lattice</h3>
-      <p>Simple bounce-back turns an airfoil or cylinder into a stair-stepped surface, contaminating wall forces. I added spline-based surface sampling and interpolated bounce-back, then compared interpolated, halfway, and full bounce-back formulations on the cylinder benchmark.</p>
+      <h3 style="margin-top: 1.5rem;">Curved-Boundary Representation</h3>
+      <p>Conventional bounce-back represents curved airfoil and cylinder surfaces using a stair-stepped approximation, introducing geometric errors into aerodynamic force calculations. I implemented spline-based surface sampling and interpolated bounce-back, then compared interpolated, halfway, and full bounce-back formulations using the cylinder benchmark.</p>
 
-      <h3 style="margin-top: 1.5rem;">Separating credible results from convincing images</h3>
-      <p>Qualitative vortices were not treated as validation. I added momentum-exchange force extraction, transient rejection, automated peak detection, period statistics, and uncertainty reporting, then compared lift, drag, and shedding frequency against published airfoil and cylinder cases.</p>
+      <h3 style="margin-top: 1.5rem;">Quantitative Assessment of Aerodynamic Results</h3>
+      <p>Qualitative flow visualization was supplemented by quantitative analysis using momentum-exchange force extraction, transient exclusion, automated peak detection, shedding-period statistics, and uncertainty reporting. Lift, drag, and shedding frequency were subsequently compared against published airfoil and cylinder benchmark results.</p>
 
-      <h3 style="margin-top: 1.5rem;">Current limitations</h3>
-      <p>The solver remains a two-dimensional, low-Mach-number prototype. Force coefficients—especially airfoil drag—are less accurate than shedding frequency, and the cylinder frequency result is based on a limited number of complete cycles. These gaps define the next work: larger-domain and resolution studies, expanded benchmark coverage, improved curved-wall treatment, and GPU parallelization.</p>
+      <h3 style="margin-top: 1.5rem;">Current Limitations and Future Work</h3>
+      <p>The solver remains a two-dimensional, low-Mach-number prototype. Force coefficients, particularly airfoil drag, exhibit greater discrepancies from published reference values than shedding frequency. The cylinder frequency result is also based on a limited number of complete shedding cycles. Further development will focus on domain-size and spatial-resolution studies, additional benchmark configurations, improved curved-wall treatment, and GPU parallelization.</p>
     </div>
   </section>
 
